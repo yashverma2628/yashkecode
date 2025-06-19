@@ -1,14 +1,14 @@
 [
   {
-    "name": "Rahul Kumar",
-    "achievement": "State Champion",
-    "competition": "Inter-State Football Championship 2024",
-    "sport": "Football",
-    "batch": "2023",
+    "name": "Bharti patel",
+    "achievement": "national Champion",
+    "competition": "national karate Championship 2023",
+    "sport": "karate",
+    "batch": "2024",
     "image": "https://github.com/yashverma2628/school-project/blob/main/images/sports_student_1.jpg?raw=true"
   },
   {
-    "name": "Priya Sharma",
+    "name": "Bharti ka chota bhai",
     "achievement": "Gold Medal",
     "competition": "District Athletics Meet",
     "sport": "Athletics - 100m Sprint",
@@ -16,11 +16,11 @@
     "image": "https://github.com/yashverma2628/school-project/blob/main/images/sports_student_2.jpg?raw=true"
   },
   {
-    "name": "Arjun Singh",
-    "achievement": "Best Player Award",
-    "competition": "Regional Cricket Tournament",
-    "sport": "Cricket",
-    "batch": "2023",
+    "name": "Bharti ka ek or bhai",
+    "achievement": "silver medal",
+    "competition": "state karate tournament Tournament",
+    "sport": "karate and kudo",
+    "batch": "2024",
     "image": "https://github.com/yashverma2628/school-project/blob/main/images/sports_student_3.jpg?raw=true"
   },
   {
