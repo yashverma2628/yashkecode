@@ -46,5 +46,13 @@
     "sport": "Basketball",
     "batch": "2023",
     "image": "https://github.com/yashverma2628/school-project/blob/main/images/sports_student_6.jpg?raw=true"
+  },
+  {
+    "name": "yash",
+    "achievement": "gold medal",
+    "competition": "national chess compitition ",
+    "sport": "chess",
+    "batch": "2024",
+    "image": "https://github.com/yashverma2628/yashkecode/blob/main/images/sports_student_1750351536311_Snapchat-1437269081 (1).jpg?raw=true"
   }
 ]
