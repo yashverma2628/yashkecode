@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shishu Vidya Pith Eng. Med. Hr. Sec School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="schoolstyle.css">  
+
+
+        <style>
+        
+
+        .slideshow-container {
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .slides-wrapper {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: white;
+        }
+
+        .slides-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .student-slide {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: white;
+        }
+
+        .student-card {
+            text-align: center;
+            max-width: 300px;
+            width: 100%;
+        }
+
+        .student-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #667eea;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .student-info h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .percentage {
+            font-size: 32px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .batch {
+            font-size: 16px;
+            color: #666;
+            background: #f8f9fa;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .slide-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .slide-nav:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slide-nav.prev {
+            left: 20px;
+        }
+
+        .slide-nav.next {
+            right: 20px;
+        }
+
+        .slide-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px;
+            background: white;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            background: #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: #667eea;
+            transform: scale(1.2);
+        }
+
+        .indicator:hover {
+            background: #764ba2;
+        }
+
+        .loading-message, .error-message {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+            font-size: 18px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .error-message {
+            color: #e74c3c;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .slideshow-container {
+                margin: 10px;
+            }
+            
+            .student-photo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .student-info h3 {
+                font-size: 20px;
+            }
+            
+            .percentage {
+                font-size: 28px;
+            }
+            
+            .slide-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            .slide-nav.prev {
+                left: 10px;
+            }
+            
+            .slide-nav.next {
+                right: 10px;
+            }
+        }
+
+
+/* Sports Section Specific Styles */
+.sports-section {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 80px 0;
+}
+
+.sports-section .section-title h2 {
+    color: white;
+}
+
+.sports-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.sports-slideshow {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sports-slide {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: white;
+}
+
+.sports-card {
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+    color: #333;
+}
+
+.sports-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #1e3c72;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.sports-info h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.sports-name {
+    font-size: 18px;
+    color: #1e3c72;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.achievement {
+    font-size: 16px;
+    color: #2a5298;
+    font-weight: 600;
+    margin-bottom: 8px;
+    background: #f0f4ff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.sport-type {
+    font-size: 14px;
+    color: #666;
+    background: #e8f2ff;
+    padding: 6px 12px;
+    border-radius: 15px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.batch-year {
+    font-size: 14px;
+    color: #888;
+    margin-top: 8px;
+}
+
+.sports-summary {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.sports-summary h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Responsive adjustments for sports section */
+@media (max-width: 768px) {
+    .sports-section {
+        padding: 60px 0;
+    }
+    
+    .sports-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .sports-info h3 {
+        font-size: 20px;
+    }
+    
+    .sports-name {
+        font-size: 16px;
+    }
+    
+    .achievement {
+        font-size: 14px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <!-- REPLACE src WITH YOUR SCHOOL LOGO IMAGE URL -->
+                <img src="https://github.com/yashverma2628/school-project/blob/main/Picsart_25-06-04_10-53-12-323.png?raw=true" alt="School Logo">
+                <span>Shishu Vidya Pith</span>
+            </div>
+            
+<div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+</div>
+
+
+            <ul class="nav-menu">
+                <li><a onclick="scrollToSection('home')">Home</a></li>
+                <li><a onclick="scrollToSection('about')">About</a></li>
+                <li><a onclick="redirectToPage('loginpage.html')">login</a></li>
+                <li><a onclick="redirectToPage('news.html')">news</a></li>
+               <li><a onclick="redirectToPage('gallery.html?category=facilities')">facilities</a></li>
+                 <li><a onclick="redirectToPage('gallery.html')">gallery</a></li>
+                <li><a onclick="redirectToPage('contact.html')">Contact</a></li>
+            </ul>
+        </nav>
+        
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu-content">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-title">Menu</span>
+            <div class="mobile-menu-close" onclick="toggleMobileMenu()">
+              <span>&times;</span>
+            </div>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a onclick="closeMobileMenuAndNavigate('home')">Home</a></li>
+            <li><a onclick="closeMobileMenuAndNavigate('about')">About</a></li>
+            <li><a onclick="closeMobileMenuAndRedirect('loginpage.html')">Login</a></li>
+            <li><a onclick="closeMobileMenuAndRedirect('news.html')">News</a></li>
+            <li><a onclick="closeMobileMenuAndRedirect('gallery.html?category=facilities')">Facilities</a></li>
+            <li><a onclick="closeMobileMenuAndRedirect('gallery.html')">Gallery</a></li>
+            <li><a onclick="closeMobileMenuAndRedirect('contact.html')">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Shishu Vidya Pith Eng. Med. Hr. Sec School</h1>
+            <p>Building character, nurturing excellence, creating future leaders</p>
+            <a onclick="scrollToSection('about')" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Principal Section -->
+    <section id="about" class="principal-section">
+        <div class="container">
+            <div class="principal-card fade-in clickable" onclick="redirectToPage('principal.html')">
+                <!-- REPLACE src WITH PRINCIPAL'S PHOTO URL -->
+                <img src="https://github.com/yashverma2628/school-project/blob/main/Screenshot_20250601_134230_Instagram.jpg?raw=true" alt="Principal Photo" class="principal-image">
+                <div class="principal-content">
+                    <h2>Principal's Welcome</h2>
+                    <h3> Sumana chatterjee maa'am </h3>
+                    <p>Welcome to our school website. We are committed to providing quality education that develops students' potential holistically, creating a generation that is smart, skilled, and of good character.</p>
+                    <a class="pbtn">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="facilities" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Excellence</h2>
+            </div>
+            <div class="features-grid">
+                <a href="principal.html" class="feature-card fade-in">
+                    <!-- REPLACE src WITH SCHOOL BUILDING IMAGE URL -->
+                    <img src="https://github.com/yashverma2628/school-project/blob/main/school%20emoji.png?raw=true" alt="School Profile" class="feature-icon">
+                    <h3>School Profile</h3>
+                    <p>Complete information about our school's vision, mission, and educational programs designed for student success.</p>
+                </a>
+                <a href="gallery.html?category=facilities" class="feature-card fade-in">
+                    <!-- REPLACE src WITH FACILITIES IMAGE URL -->
+                    <img src="https://github.com/yashverma2628/school-project/blob/main/school%20facilities.png?raw=true" alt="Facilities" class="feature-icon">
+                    <h3>Facilities</h3>
+                    <p>Modern and complete facilities supporting effective and comfortable learning activities.</p>
+                </a>
+                <a href="https://www.google.com/maps/place/Shishu+vidyapeeth+bangali+kanya+high+school/@23.1809225,79.967405,17z/data=!3m1!4b1!4m6!3m5!1s0x3981af7ccad90197:0x5dfcc8c96d55ad07!8m2!3d23.1809225!4d79.967405!16s%2Fg%2F11lh514kkm?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D" class="feature-card fade-in">
+                    <!-- REPLACE src WITH LOCATION/MAP IMAGE URL -->
+                    <img src="https://github.com/yashverma2628/school-project/blob/main/school%20location.png?raw=true" alt="Location" class="feature-icon">
+                    <h3>Location</h3>
+                    <p>Strategically located with easy access and a conducive learning environment.</p>
+                </a>
+                <div class="feature-card fade-in">
+                    <!-- REPLACE src WITH HISTORICAL IMAGE URL -->
+                    <img src="https://github.com/yashverma2628/school-project/blob/main/school%20history.png?raw=true" alt="History" class="feature-icon">
+                    <h3>History</h3>
+                    <p>Rich history and educational traditions that have shaped many successful generations.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <!-- REPLACE src WITH ACHIEVEMENTS/TROPHY IMAGE URL -->
+                    <img src="https://github.com/yashverma2628/school-project/blob/main/school%20%20achievements.png?raw=true" alt="Achievements" class="feature-icon">
+                    <h3>Achievements</h3>
+                    <p>Outstanding achievements in academics, sports, and arts at various competition levels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section id="results" class="results-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>OUR SCHOOL RESULTS</h2>
+            <p class="results-description">
+                We are immensely proud of our brilliant students who have achieved exceptional results through their dedication, 
+                hard work, and the unwavering support of our faculty. Their outstanding performance reflects the quality of 
+                education and values we instill at our institution.
+            </p>
+        </div>
+        </div><div class="slideshow-container">
+        <div class="slides-wrapper" id="slideWrapper">
+            <div class="loading-message" id="loadingMessage">Loading student data...</div>
+        </div>
+        
+        <button class="slide-nav prev" id="prevBtn">‹</button>
+        <button class="slide-nav next" id="nextBtn">›</button>
+        
+        <div class="slide-indicators" id="slideIndicators">
+            <!-- Indicators will be generated dynamically -->
+        </div>
+    </div>
+
+        <!-- Results Summary -->
+        <div class="results-summary">
+            <h3>Academic Excellence Summary</h3>
+            <div class="summary-stats">
+                <div class="stat-item">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Top Performers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95.6%</div>
+                    <div class="stat-label">Highest Score</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">91.8%</div>
+                    <div class="stat-label">Average Score</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2024</div>
+                    <div class="stat-label">Academic Year</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Sports Student Appreciation Section -->
+<section id="sports-results" class="sports-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>SPORTS EXCELLENCE</h2>
+            <p class="sports-description">
+                Celebrating our talented athletes who have brought glory to our school through their exceptional 
+                performance in various sports competitions and tournaments. Their dedication and hard work inspire 
+                the entire school community.
+            </p>
+        </div>
+        
+        <div class="slideshow-container sports-slideshow">
+            <div class="slides-wrapper" id="sportsSlideWrapper">
+                <div class="loading-message" id="sportsLoadingMessage">Loading sports data...</div>
+            </div>
+            
+            <button class="slide-nav prev" id="sportsPrevBtn">‹</button>
+            <button class="slide-nav next" id="sportsNextBtn">›</button>
+            
+            <div class="slide-indicators" id="sportsSlideIndicators">
+                <!-- Indicators will be generated dynamically -->
+            </div>
+        </div>
+
+        <!-- Sports Summary -->
+        <div class="sports-summary">
+            <h3>Sports Achievement Summary</h3>
+            <div class="summary-stats">
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Sports Champions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Competitions Won</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Different Sports</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2024</div>
+                    <div class="stat-label">Current Year</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <!-- News and Agenda -->
+    <section id="news" class="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>News and Agenda</h2>
+            </div>
+            <div class="news-grid">
+                <div class="news-card fade-in">
+                    <!-- REPLACE src WITH HOME LEARNING IMAGE URL -->
+                    <img src="https://github.com/yashverma2628/school-project/blob/main/class%20room.png?raw=true" alt="Learning at Class" class="news-image">
+                    <div class="news-content">
+                        <h3>Learning at Class</h3>
+                        <p>Guidelines and schedules for effective distance learning activities during the pandemic period.</p>
+                        <div class="news-date">March 15, 2024</div>
+                    </div>
+                </div>
+                <div class="news-card fade-in">
+                    <!-- REPLACE src WITH HOME ACTIVITIES IMAGE URL -->
+                    <img src="https://github.com/yashverma2628/school-project/blob/main/IMG-20230807-WA0058.jpg?raw=true" alt="Extracurricular activities" class="news-image">
+                    <div class="news-content">
+                        <h3> Extracurricular activities</h3>
+                        <p>Implementation of creative and innovative learning methods to maintain education quality.</p>
+                        <div class="news-date">March 10, 2024</div>
+                    </div>
+                </div>
+                <div class="news-card fade-in">
+                    <!-- REPLACE src WITH ONLINE LEARNING IMAGE URL -->
+                    <img src="https://github.com/yashverma2628/school-project/blob/main/20221221_112010.jpg?raw=true" alt="sports day Activities" class="news-image">
+                    <div class="news-content">
+                        <h3>sports day Activities</h3>
+                        <p>Utilization of technology platforms to support interactive and effective learning processes.</p>
+                        <div class="news-date">March 5, 2024</div>
+                    </div>
+                </div>
+                <div class="news-card fade-in">
+                    <!-- REPLACE src WITH ACHIEVEMENT CEREMONY IMAGE URL -->
+                    <img src="https://github.com/yashverma2628/school-project/blob/main/IMG-20230803-WA0080.jpg?raw=true" alt="school captains and counsil" class="news-image">
+                    <div class="news-content">
+                        <h3>school captains and counsil</h3>
+                        <p>Recognition program for students with outstanding achievements in various fields.</p>
+                        <div class="news-date">February 28, 2024</div>
+                    </div>
+                </div>
+                <div class="news-card fade-in">
+                    <!-- REPLACE src WITH MORAL EDUCATION IMAGE URL -->
+                    <img src="https://github.com/yashverma2628/school-project/blob/main/WhatsApp%20Image%202023-09-04%20at%2000.37.52.jpg?raw=true" alt="our teaching staff" class="news-image">
+                    <div class="news-content">
+                        <h3>OUR TEACHING STAFF</h3>
+                        <p>Character education programs that emphasize moral values and positive behavior.</p>
+                        <div class="news-date">February 25, 2024</div>
+                    </div>
+                </div>
+                <div class="news-card fade-in">
+                    <!-- REPLACE src WITH STUDENT REGISTRATION IMAGE URL -->
+                    <img src="https://github.com/yashverma2628/school-project/blob/main/20230905_093923.jpg?raw=true" alt="EVENTS AND CELEBRATIONS" class="news-image">
+                    <div class="news-content">
+                        <h3>EVENTS AND CELEBRATIONS</h3>
+                        <p>Information and procedures for new student admissions for the 2020/2021 academic year.</p>
+                        <div class="news-date">February 20, 2024</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <!-- REPLACE src WITH LIBRARY IMAGE URL -->
+                <div class="image-containerclassroom"><img src="https://github.com/yashverma2628/school-project/blob/main/Snapchat-1439079314.jpg?raw=true" alt="annual function" class="gallery-item fade-in clickable" onclick="openGalleryModal('library')">
+                 <div class="imageclassroom-text"> ANNUAL FUNCTION</div>
+                </div>
+                
+                <!-- REPLACE src WITH CLASSROOM IMAGE URL -->
+                <div class="image-containerclassroom"> <img src="https://github.com/yashverma2628/school-project/blob/main/Snapchat-1773567434%20(1).jpg?raw=true" alt="Classroom" class="gallery-item fade-in clickable" onclick="openGalleryModal('classroom')">
+                   <div class="imageclassroom-text"> OUR CLASSSROOM</div>
+                </div>
+                
+                <!-- REPLACE src WITH STUDENTS GROUP IMAGE URL -->
+               <div class="image-containerclassroom"> <img src="https://github.com/yashverma2628/school-project/blob/main/20230824_095051.jpg?raw=true" alt="Students Group" class="gallery-item fade-in clickable" onclick="openGalleryModal('students')">
+                <div class="imageclassroom-text"> OUR STUDENTS</div>
+                </div>
+                
+                <!-- REPLACE src WITH COMPUTER LAB IMAGE URL -->
+                <div class="image-containerclassroom"><img src="https://github.com/yashverma2628/school-project/blob/main/computer%20lab.png?raw=true" alt="Computer Lab" class="gallery-item fade-in clickable" onclick="openGalleryModal('lab')">
+                <div class="imageclassroom-text"> COMPUTER LAB</div>
+                </div>
+                
+                <!-- REPLACE src WITH ARTS ACTIVITY IMAGE URL -->
+                <div class="image-containerclassroom"><img src="https://github.com/yashverma2628/school-project/blob/main/IMG-20231020-WA0011.jpg?raw=true" alt="Arts Activity" class="gallery-item fade-in clickable" onclick="openGalleryModal('arts')">
+                <div class="imageclassroom-text"> kalakaari</div>
+                </div>
+                
+                <!-- REPLACE src WITH SCIENCE LAB IMAGE URL -->
+                <div class="image-containerclassroom"><img src="https://github.com/yashverma2628/school-project/blob/main/science%20lab.png?raw=true" alt="Science Lab" class="gallery-item fade-in clickable" onclick="openGalleryModal('science')">
+                 <div class="imageclassroom-text"> OUR SCIENCE LAB</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button onclick="navigateToGallery()" class="gbtn">View More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>School</h3>
+                    <ul>
+                        <li><a onclick="redirectToPage('about.html')">About</a></li>
+                        <li><a onclick="redirectToPage('vision-mission.html')">Vision & Mission</a></li>
+                        <li><a onclick="redirectToPage('organization.html')">Organization</a></li>
+                        <li><a onclick="redirectToPage('news.html')">news</a></li>
+                        <li><a onclick="redirectToPage('gallery.html')">gallery</a></li>
+                        <li><a onclick="redirectToPage('contact.html')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>General Information</h3>
+                    <ul>
+                        <li><a onclick="redirectToPage('principal.html')">Curriculum</a></li>
+                        <li><a onclick="redirectToPage('principal.html')">Extracurricular</a></li>
+                        <li><a onclick="redirectToPage('index.html')">shishu Vidya pith</a></li>
+                        <li><a onclick="redirectToPage('principal.html')">Guidelines</a></li>
+                        <li><a onclick="redirectToPage('https://www.google.com/maps/place/Shishu+vidyapeeth+bangali+kanya+high+school/@23.1809225,79.967405,17z/data=!3m1!4b1!4m6!3m5!1s0x3981af7ccad90197:0x5dfcc8c96d55ad07!8m2!3d23.1809225!4d79.967405!16s%2Fg%2F11lh514kkm?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D')">Location</a></li>
+                        <li><a onclick="redirectToPage('contact.html')">Contact</a></li>
+                    </ul>
+                </div>
+              <div class="footer-section">
+                    <h3>Social Media</h3>
+                     <ul>
+                     <li><a onclick="openSocialMedia('facebook')"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                     <li><a onclick="openSocialMedia('instagram')"><i class="fab fa-instagram"></i> Instagram</a></li>
+                      <li><a onclick="openSocialMedia('youtube')"><i class="fab fa-youtube"></i> YouTube</a></li>
+                       </ul>
+             </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 shishu vidya pith. All rights reserved. Hosting by Yash Verma</p>
+            </div>
+        </div>
+    </footer>
+
+    
+
+
+
+<script>
+     class StudentSlideshow {
+    constructor() {
+        this.students = [];
+        this.currentSlide = 0;
+        this.slideInterval = null;
+        this.autoSlideDelay = 5000; // 5 seconds
+        
+        this.slideWrapper = document.getElementById('slideWrapper');
+        this.indicatorsContainer = document.getElementById('slideIndicators');
+        this.loadingMessage = document.getElementById('loadingMessage');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        
+        this.init();
+    }
+
+    async init() {
+        try {
+            this.showLoadingMessage();
+            await this.loadStudentData();
+            this.hideLoadingMessage();
+            this.renderSlideshow();
+            this.setupEventListeners();
+            this.startAutoSlide();
+            
+            console.log(`Slideshow initialized with ${this.students.length} students`);
+        } catch (error) {
+            this.showError('Failed to load student data: ' + error.message);
+            console.error('Slideshow initialization error:', error);
+        }
+    }
+
+    showLoadingMessage() {
+        if (this.loadingMessage) {
+            this.loadingMessage.style.display = 'flex';
+        }
+    }
+
+    hideLoadingMessage() {
+        if (this.loadingMessage) {
+            this.loadingMessage.style.display = 'none';
+        }
+    }
+
+    async loadStudentData() {
+        try {
+            console.log('Loading student data from students_data.json...');
+            const response = await fetch('students_data.json');
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            console.log('Raw data loaded:', data);
+            
+            // Your JSON is an array, so handle it directly
+            if (Array.isArray(data)) {
+                this.students = this.processStudentData(data);
+            } else {
+                throw new Error('Expected an array of students');
+            }
+            
+            console.log(`Processed ${this.students.length} valid students:`, this.students);
+            
+            if (this.students.length === 0) {
+                throw new Error('No valid student data found');
+            }
+            
+        } catch (error) {
+            console.error('Error loading student data:', error);
+            console.warn('Using fallback data');
+            
+            // Your exact JSON data as fallback
+            const fallbackData = [
+                {
+                    "name": "yoyo",
+                    "percentage": 88,
+                    "batch": "2020",
+                    "image": "https://raw.githubusercontent.com/yashverma2628/school-project/main/images/student_1749300467103_school%20%20achievements.png"
+                },
+                {
+                    "name": "yoyo",
+                    "percentage": 99,
+                    "batch": "2026",
+                    "image": "https://raw.githubusercontent.com/yashverma2628/school-project/main/images/student_1749300616310_IMG-20230807-WA0022.jpg"
+                }
+            ];
+            
+            this.students = this.processStudentData(fallbackData);
+        }
+    }
+
+    processStudentData(rawData) {
+        return rawData.map((student, index) => {
+            if (!student || typeof student !== 'object') {
+                console.warn(`Invalid student data at index ${index}:`, student);
+                return null;
+            }
+            
+            // Process your JSON structure specifically
+            return {
+                name: student.name || `Student ${index + 1}`,
+                imageUrl: student.image || 'https://via.placeholder.com/200x200?text=No+Image',
+                percentage: this.formatPercentage(student.percentage),
+                batchYear: this.formatBatch(student.batch)
+            };
+        }).filter(student => student !== null); // Remove invalid entries
+    }
+
+    formatPercentage(percentage) {
+        if (typeof percentage === 'number') {
+            return `${percentage}%`;
+        } else if (typeof percentage === 'string') {
+            // If it already has %, keep it; otherwise add %
+            return percentage.includes('%') ? percentage : `${percentage}%`;
+        }
+        return 'N/A';
+    }
+
+    formatBatch(batch) {
+        if (batch) {
+            return `Batch ${batch}`;
+        }
+        return 'Unknown Batch';
+    }
+
+    renderSlideshow() {
+        console.log(`Rendering slideshow with ${this.students.length} students`);
+        
+        if (this.students.length === 0) {
+            this.slideWrapper.innerHTML = '<div class="error-message">No student data available</div>';
+            return;
+        }
+
+        // Clear existing content
+        this.slideWrapper.innerHTML = '';
+        this.indicatorsContainer.innerHTML = '';
+
+        // Create slides container
+        const slidesContainer = document.createElement('div');
+        slidesContainer.className = 'slides-container';
+        slidesContainer.style.width = `${this.students.length * 100}%`;
+
+        // Create slides
+        this.students.forEach((student, index) => {
+            console.log(`Creating slide ${index + 1} for:`, student.name);
+            const slide = this.createSlide(student, index);
+            slidesContainer.appendChild(slide);
+        });
+
+        this.slideWrapper.appendChild(slidesContainer);
+
+        // Create indicators
+        this.students.forEach((_, index) => {
+            const indicator = this.createIndicator(index);
+            this.indicatorsContainer.appendChild(indicator);
+        });
+
+        // Show first slide
+        this.showSlide(0);
+        console.log('Slideshow rendering complete');
+    }
+
+    createSlide(student, index) {
+        const slide = document.createElement('div');
+        slide.className = 'student-slide';
+        slide.style.width = `${100 / this.students.length}%`;
+        
+        // Handle image loading errors
+        const imageUrl = student.imageUrl;
+        const fallbackImage = 'https://via.placeholder.com/200x200?text=' + encodeURIComponent(student.name.charAt(0));
+        
+        slide.innerHTML = `
+            <div class="student-card">
+                <img src="${imageUrl}" 
+                     alt="${student.name}" 
+                     class="student-photo" 
+                     loading="lazy"
+                     onerror="this.src='${fallbackImage}'">
+                <div class="student-info">
+                    <h3>${student.name}</h3>
+                    <div class="percentage">${student.percentage}</div>
+                    <div class="batch">${student.batchYear}</div>
+                </div>
+            </div>
+        `;
+        
+        return slide;
+    }
+
+    createIndicator(index) {
+        const indicator = document.createElement('div');
+        indicator.className = 'indicator';
+        indicator.setAttribute('data-slide', index);
+        indicator.addEventListener('click', () => {
+            this.goToSlide(index);
+        });
+        return indicator;
+    }
+
+    showSlide(index) {
+        const slidesContainer = this.slideWrapper.querySelector('.slides-container');
+        const indicators = this.indicatorsContainer.querySelectorAll('.indicator');
+
+        if (!slidesContainer) {
+            console.error('Slides container not found');
+            return;
+        }
+
+        // Ensure index is within bounds
+        if (index < 0) {
+            index = this.students.length - 1;
+        } else if (index >= this.students.length) {
+            index = 0;
+        }
+
+        // Update current slide index
+        this.currentSlide = index;
+
+        // Move slides container
+        const translateX = -index * (100 / this.students.length);
+        slidesContainer.style.transform = `translateX(${translateX}%)`;
+
+        // Update indicators
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+
+        console.log(`Showing slide ${index + 1} of ${this.students.length}`);
+    }
+
+    goToSlide(index) {
+        if (index >= 0 && index < this.students.length) {
+            this.showSlide(index);
+            this.resetAutoSlide();
+        }
+    }
+
+    nextSlide() {
+        const nextIndex = (this.currentSlide + 1) % this.students.length;
+        this.showSlide(nextIndex);
+    }
+
+    prevSlide() {
+        const prevIndex = (this.currentSlide - 1 + this.students.length) % this.students.length;
+        this.showSlide(prevIndex);
+    }
+
+    startAutoSlide() {
+        if (this.students.length <= 1) return;
+        
+        this.slideInterval = setInterval(() => {
+            this.nextSlide();
+        }, this.autoSlideDelay);
+    }
+
+    stopAutoSlide() {
+        if (this.slideInterval) {
+            clearInterval(this.slideInterval);
+            this.slideInterval = null;
+        }
+    }
+
+    resetAutoSlide() {
+        this.stopAutoSlide();
+        this.startAutoSlide();
+    }
+
+    setupEventListeners() {
+        // Navigation buttons
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => {
+                this.prevSlide();
+                this.resetAutoSlide();
+            });
+        }
+
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => {
+                this.nextSlide();
+                this.resetAutoSlide();
+            });
+        }
+
+        // Pause on hover
+        this.slideWrapper.addEventListener('mouseenter', () => {
+            this.stopAutoSlide();
+        });
+
+        this.slideWrapper.addEventListener('mouseleave', () => {
+            this.startAutoSlide();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                this.prevSlide();
+                this.resetAutoSlide();
+            } else if (e.key === 'ArrowRight') {
+                this.nextSlide();
+                this.resetAutoSlide();
+            }
+        });
+
+        // Touch/swipe support
+        let startX = 0;
+        let endX = 0;
+
+        this.slideWrapper.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            this.stopAutoSlide();
+        });
+
+        this.slideWrapper.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    this.nextSlide();
+                } else {
+                    this.prevSlide();
+                }
+            }
+            this.resetAutoSlide();
+        });
+    }
+
+    showError(message) {
+        this.slideWrapper.innerHTML = `<div class="error-message">${message}</div>`;
+        console.error('Slideshow error:', message);
+    }
+}
+
+// Initialize slideshow when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const slideshow = new StudentSlideshow();
+    window.slideshow = slideshow;
+});
+        // Initialize slideshow when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const slideshow = new StudentSlideshow();
+            window.slideshow = slideshow;
+        });
+
+        
+        // Make sure DOM is fully loaded before executing scripts
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded and parsed');
+            
+            // Initialize slideshow
+            showSlide(currentSlideIndex);
+            
+            // Add animation observers
+            initializeAnimations();
+        });
+
+        // Function to redirect to different pages
+        function redirectToPage(pageName) {
+            console.log('Redirecting to:', pageName);
+            try {
+                window.location.href = pageName;
+            } catch (error) {
+                console.error('Error redirecting to page:', error);
+                // Fallback method
+                window.location.assign(pageName);
+            }
+        }
+
+        // Specific function for gallery navigation (more robust)
+        function navigateToGallery() {
+            console.log('Navigate to gallery clicked');
+            try {
+                // Multiple fallback methods
+                if (window.location.href) {
+                    window.location.href = 'gallery.html';
+                } else if (window.location.assign) {
+                    window.location.assign('gallery.html');
+                } else {
+                    window.location = 'gallery.html';
+                }
+            } catch (error) {
+                console.error('Error navigating to gallery:', error);
+                alert('Unable to navigate to gallery. Please check if gallery.html exists.');
+            }
+        }
+
+        // Function to scroll to sections
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Function to open social media links
+        function openSocialMedia(platform) {
+            const urls = {
+                'facebook': 'https://facebook.com/smpn1cibadak', // Replace with actual URL
+                'instagram': 'https://instagram.com/smpn1cibadak', // Replace with actual URL
+                'youtube': 'https://youtube.com/smpn1cibadak' // Replace with actual URL
+            };
+            window.open(urls[platform], '_blank');
+        }
+
+        // Function to open gallery modal (you can customize this)
+        function openGalleryModal(galleryType) {
+            // This can redirect to a specific gallery page or open a modal
+            redirectToPage(`gallery-${galleryType}.html`);
+        }
+
+        // Initialize animations
+        function initializeAnimations() {
+            // Add animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements that should animate
+            document.querySelectorAll('.feature-card, .news-card, .gallery-item, .principal-card').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+// Function to toggle mobile menu
+function toggleMobileMenu() {
+    const overlay = document.getElementById('mobileMenuOverlay');
+    const hamburger = document.querySelector('.mobile-menu-toggle');
+    
+    if (overlay.classList.contains('active')) {
+        overlay.classList.remove('active');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    } else {
+        overlay.classList.add('active');
+        hamburger.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Function to close mobile menu and navigate to section
+function closeMobileMenuAndNavigate(sectionId) {
+    toggleMobileMenu();
+    setTimeout(() => {
+        scrollToSection(sectionId);
+    }, 300);
+}
+
+// Function to close mobile menu and redirect to page
+function closeMobileMenuAndRedirect(pageName) {
+    toggleMobileMenu();
+    setTimeout(() => {
+        redirectToPage(pageName);
+    }, 300);
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.getElementById('mobileMenuOverlay');
+    const menuContent = document.querySelector('.mobile-menu-content');
+    
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) {
+            toggleMobileMenu();
+        }
+    });
+    
+    // Close menu on window resize if screen becomes larger
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && overlay.classList.contains('active')) {
+            toggleMobileMenu();
+        }
+    });
+});
+
+class SportsSlideshow {
+    constructor() {
+        this.sportsStudents = [];
+        this.currentSlide = 0;
+        this.slideInterval = null;
+        this.autoSlideDelay = 6000; // 6 seconds
+        
+        this.slideWrapper = document.getElementById('sportsSlideWrapper');
+        this.indicatorsContainer = document.getElementById('sportsSlideIndicators');
+        this.loadingMessage = document.getElementById('sportsLoadingMessage');
+        this.prevBtn = document.getElementById('sportsPrevBtn');
+        this.nextBtn = document.getElementById('sportsNextBtn');
+        
+        this.init();
+    }
+
+    async init() {
+        try {
+            this.showLoadingMessage();
+            await this.loadSportsData();
+            this.hideLoadingMessage();
+            this.renderSlideshow();
+            this.setupEventListeners();
+            this.startAutoSlide();
+            
+            console.log(`Sports slideshow initialized with ${this.sportsStudents.length} students`);
+        } catch (error) {
+            this.showError('Failed to load sports data: ' + error.message);
+            console.error('Sports slideshow initialization error:', error);
+        }
+    }
+
+    showLoadingMessage() {
+        if (this.loadingMessage) {
+            this.loadingMessage.style.display = 'flex';
+        }
+    }
+
+    hideLoadingMessage() {
+        if (this.loadingMessage) {
+            this.loadingMessage.style.display = 'none';
+        }
+    }
+
+    async loadSportsData() {
+        try {
+            console.log('Loading sports data from sports_students_data.json...');
+            const response = await fetch('sports_students_data.json');
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            console.log('Raw sports data loaded:', data);
+            
+            if (Array.isArray(data)) {
+                this.sportsStudents = this.processSportsData(data);
+            } else {
+                throw new Error('Expected an array of sports students');
+            }
+            
+            console.log(`Processed ${this.sportsStudents.length} valid sports students:`, this.sportsStudents);
+            
+            if (this.sportsStudents.length === 0) {
+                throw new Error('No valid sports student data found');
+            }
+            
+        } catch (error) {
+            console.error('Error loading sports data:', error);
+            console.warn('Using fallback sports data');
+            
+            // Fallback data
+            const fallbackData = [
+                {
+                    "name": "Rahul Kumar",
+                    "achievement": "State Champion",
+                    "competition": "Inter-State Football Championship",
+                    "sport": "Football",
+                    "batch": "2023",
+                    "image": "https://via.placeholder.com/200x200?text=Rahul"
+                },
+                {
+                    "name": "Priya Sharma",
+                    "achievement": "Gold Medal",
+                    "competition": "District Athletics Meet",
+                    "sport": "Athletics",
+                    "batch": "2024",
+                    "image": "https://via.placeholder.com/200x200?text=Priya"
+                }
+            ];
+            
+            this.sportsStudents = this.processSportsData(fallbackData);
+        }
+    }
+
+    processSportsData(rawData) {
+        return rawData.map((student, index) => {
+            if (!student || typeof student !== 'object') {
+                console.warn(`Invalid sports student data at index ${index}:`, student);
+                return null;
+            }
+            
+            return {
+                name: student.name || `Student ${index + 1}`,
+                imageUrl: student.image || 'https://via.placeholder.com/200x200?text=No+Image',
+                achievement: student.achievement || 'Participant',
+                competition: student.competition || 'School Competition',
+                sport: student.sport || 'General Sports',
+                batchYear: this.formatBatch(student.batch)
+            };
+        }).filter(student => student !== null);
+    }
+
+    formatBatch(batch) {
+        if (batch) {
+            return `Batch ${batch}`;
+        }
+        return 'Unknown Batch';
+    }
+
+    renderSlideshow() {
+        console.log(`Rendering sports slideshow with ${this.sportsStudents.length} students`);
+        
+        if (this.sportsStudents.length === 0) {
+            this.slideWrapper.innerHTML = '<div class="error-message">No sports data available</div>';
+            return;
+        }
+
+        this.slideWrapper.innerHTML = '';
+        this.indicatorsContainer.innerHTML = '';
+
+        const slidesContainer = document.createElement('div');
+        slidesContainer.className = 'slides-container';
+        slidesContainer.style.width = `${this.sportsStudents.length * 100}%`;
+
+        this.sportsStudents.forEach((student, index) => {
+            const slide = this.createSportsSlide(student, index);
+            slidesContainer.appendChild(slide);
+        });
+
+        this.slideWrapper.appendChild(slidesContainer);
+
+        this.sportsStudents.forEach((_, index) => {
+            const indicator = this.createIndicator(index);
+            this.indicatorsContainer.appendChild(indicator);
+        });
+
+        this.showSlide(0);
+        console.log('Sports slideshow rendering complete');
+    }
+
+    createSportsSlide(student, index) {
+        const slide = document.createElement('div');
+        slide.className = 'sports-slide';
+        slide.style.width = `${100 / this.sportsStudents.length}%`;
+        
+        const imageUrl = student.imageUrl;
+        const fallbackImage = 'https://via.placeholder.com/200x200?text=' + encodeURIComponent(student.name.charAt(0));
+        
+        slide.innerHTML = `
+            <div class="sports-card">
+                <img src="${imageUrl}" 
+                     alt="${student.name}" 
+                     class="sports-photo" 
+                     loading="lazy"
+                     onerror="this.src='${fallbackImage}'">
+                <div class="sports-info">
+                    <h3>${student.name}</h3>
+                    <div class="achievement">${student.achievement}</div>
+                    <div class="sports-name">${student.competition}</div>
+                    <div class="sport-type">${student.sport}</div>
+                    <div class="batch-year">${student.batchYear}</div>
+                </div>
+            </div>
+        `;
+        
+        return slide;
+    }
+
+    createIndicator(index) {
+        const indicator = document.createElement('div');
+        indicator.className = 'indicator';
+        indicator.setAttribute('data-slide', index);
+        indicator.addEventListener('click', () => {
+            this.goToSlide(index);
+        });
+        return indicator;
+    }
+
+    showSlide(index) {
+        const slidesContainer = this.slideWrapper.querySelector('.slides-container');
+        const indicators = this.indicatorsContainer.querySelectorAll('.indicator');
+
+        if (!slidesContainer) {
+            console.error('Sports slides container not found');
+            return;
+        }
+
+        if (index < 0) {
+            index = this.sportsStudents.length - 1;
+        } else if (index >= this.sportsStudents.length) {
+            index = 0;
+        }
+
+        this.currentSlide = index;
+
+        const translateX = -index * (100 / this.sportsStudents.length);
+        slidesContainer.style.transform = `translateX(${translateX}%)`;
+
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+
+        console.log(`Showing sports slide ${index + 1} of ${this.sportsStudents.length}`);
+    }
+
+    goToSlide(index) {
+        if (index >= 0 && index < this.sportsStudents.length) {
+            this.showSlide(index);
+            this.resetAutoSlide();
+        }
+    }
+
+    nextSlide() {
+        const nextIndex = (this.currentSlide + 1) % this.sportsStudents.length;
+        this.showSlide(nextIndex);
+    }
+
+    prevSlide() {
+        const prevIndex = (this.currentSlide - 1 + this.sportsStudents.length) % this.sportsStudents.length;
+        this.showSlide(prevIndex);
+    }
+
+    startAutoSlide() {
+        if (this.sportsStudents.length <= 1) return;
+        
+        this.slideInterval = setInterval(() => {
+            this.nextSlide();
+        }, this.autoSlideDelay);
+    }
+
+    stopAutoSlide() {
+        if (this.slideInterval) {
+            clearInterval(this.slideInterval);
+            this.slideInterval = null;
+        }
+    }
+
+    resetAutoSlide() {
+        this.stopAutoSlide();
+        this.startAutoSlide();
+    }
+
+    setupEventListeners() {
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => {
+                this.prevSlide();
+                this.resetAutoSlide();
+            });
+        }
+
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => {
+                this.nextSlide();
+                this.resetAutoSlide();
+            });
+        }
+
+        this.slideWrapper.addEventListener('mouseenter', () => {
+            this.stopAutoSlide();
+        });
+
+        this.slideWrapper.addEventListener('mouseleave', () => {
+            this.startAutoSlide();
+        });
+
+        // Touch/swipe support
+        let startX = 0;
+        let endX = 0;
+
+        this.slideWrapper.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            this.stopAutoSlide();
+        });
+
+        this.slideWrapper.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    this.nextSlide();
+                } else {
+                    this.prevSlide();
+                }
+            }
+            this.resetAutoSlide();
+        });
+    }
+
+    showError(message) {
+        this.slideWrapper.innerHTML = `<div class="error-message">${message}</div>`;
+        console.error('Sports slideshow error:', message);
+    }
+}
+
+// Initialize sports slideshow when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Add a small delay to ensure the academic slideshow is initialized first
+    setTimeout(() => {
+        const sportsSlideshow = new SportsSlideshow();
+        window.sportsSlideshow = sportsSlideshow;
+    }, 500);
+});
+
+
+    </script>
+</body>
+</html>
