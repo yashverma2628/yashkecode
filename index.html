@@ -3,324 +3,1022 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shishu Vidya Pith Eng. Med. Hr. Sec School</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Portfolio - Designer & Coder</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link rel="stylesheet" href="schoolstyle.css">  
-
-
-        <style>
-        
-
-        .slideshow-container {
-            max-width: 600px;
-            width: 100%;
-            position: relative;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
+<link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .slides-wrapper {
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-            height: 400px;
-            background: white;
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+            overflow-x: hidden;
         }
 
-        .slides-container {
+        /* Navigation Styles */
+        .navbar {
+            background-color: #111;
+            height: 60px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
             display: flex;
-            transition: transform 0.5s ease-in-out;
-            height: 100%;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
         }
 
-        .student-slide {
-            flex: 0 0 auto;
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 40px 20px;
-            background: white;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
         }
 
-        .student-card {
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            font-size: 14px;
+        }
+
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-left: 2rem;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #667eea;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+.hero {
+    margin-top: 60px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    background: #f8f8f8;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+    gap: 2rem;
+    position: relative;
+}
+
+/* Left Section - Designer */
+.designer-section {
+    text-align: center;
+    position: relative;
+    padding-right: 2rem;
+    
+}
+
+.passion-one-regular {
+    font-size: 72px;
+    font-weight: 300;
+    color: #999;
+    margin-bottom: 1rem;
+    position: relative;
+   font-family: passion-one-regular, cursive;
+    letter-spacing: -2px;
+    background: linear-gradient(90deg,#54a0ff,#b374f3da,#ffc863df);
+    background-clip: text;
+    color: transparent;
+   transition: animate 3s ease-in-out infinite;
+}
+
+
+.designer-desc {
+    font-size: 18px;
+    color: #999;
+    line-height: 1.6;
+    max-width: 320px;
+    margin-left: auto;
+    font-weight: 300;
+}
+
+/* Center Image */
+.center-image {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.center-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Paint splash effect behind image */
+.center-image::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    width: 300px;
+    height: 600px;
+    background: linear-gradient(45deg, #ff6b6b 0%, #feca57 25%, #48dbfb 50%, #ff9ff3 75%, #54a0ff 100%);
+    border-radius: 50% 20% 40% 30%;
+    z-index: -1;
+    transform: rotate(-15deg);
+    opacity: 0.8;
+}
+
+.center-image::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -80px;
+    width: 250px;
+    height: 500px;
+    background: linear-gradient(-45deg, #a8e6cf 0%, #dcedc1 25%, #ffd3a5 50%, #fd9853 75%, #ff6b6b 100%);
+    border-radius: 30% 50% 20% 40%;
+    z-index: -1;
+    transform: rotate(10deg);
+    opacity: 0.7;
+}
+
+/* Placeholder styling for when no image is provided */
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Right Section - Coder */
+.coder-section {
+    text-align: left;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.coder-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 72px;
+    font-weight: 300;
+    color: #666;
+    margin-bottom: 1rem;
+    position: relative;
+    letter-spacing: -2px;
+}
+
+
+
+.coder-title::before {
+    content: '<';
+    color: #666;
+    font-weight: 300;
+}
+
+.coder-title::after {
+    content: '/>';
+    color: #666;
+    font-weight: 300;
+}
+
+.coder-desc {
+    font-size: 18px;
+    color: #999;
+    line-height: 1.6;
+    max-width: 320px;
+    font-weight: 300;
+}
+
+/* Floating Code Elements - More subtle */
+.floating-code {
+    position: absolute;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #ccc;
+    opacity: 0.4;
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+}
+
+.code-1 {
+    top: 20%;
+    right: 5%;
+    animation-delay: 0s;
+}
+
+.code-2 {
+    bottom: 35%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+.code-3 {
+    top: 45%;
+    right: 50%;
+    animation-delay: 3s;
+}
+
+.code-4 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+
+.code-5 {
+    top: 75%;
+    right: 5%;
+    animation-delay: 3s;
+}
+
+
+.code-6 {
+    top: 15%;
+    right: 25%;
+    animation-delay: 3s;
+}
+
+
+.code-7 {
+    top: 95%;
+    right: 10%;
+    animation-delay: 5s;
+}
+
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+        opacity: 0.4;
+    }
+    50% { 
+        transform: translateY(-15px) rotate(2deg); 
+        opacity: 0.6;
+    }
+}
+
+        /* Common Section Styles */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 3rem;
             text-align: center;
-            max-width: 300px;
-            width: 100%;
+            position: relative;
         }
 
-        .student-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #667eea;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
         }
 
-        .student-info h3 {
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #777;
+            margin-top: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            background-color: #f8f9fa;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .skill-category h3 {
             font-size: 24px;
-            color: #333;
-            margin-bottom: 10px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .design-skills h3 {
+            color: #e74c3c;
+        }
+
+        .coding-skills h3 {
+            color: #3498db;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .skill-item i {
+            font-size: 24px;
+            margin-bottom: 1rem;
+        }
+
+        .design-skills .skill-item i {
+            color: #e74c3c;
+        }
+
+        .coding-skills .skill-item i {
+            color: #3498db;
+        }
+
+        .skill-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        /* Portfolio Section */
+        .portfolio-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .tab-btn {
+            background: none;
+            border: 2px solid #ddd;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .tab-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
             font-weight: 600;
         }
 
-        .percentage {
-            font-size: 32px;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 8px;
+        .portfolio-content {
+            padding: 1.5rem;
         }
 
-        .batch {
-            font-size: 16px;
-            color: #666;
-            background: #f8f9fa;
-            padding: 8px 16px;
-            border-radius: 20px;
-            display: inline-block;
-        }
-
-        .slide-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.9);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 10;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-        }
-
-        .slide-nav:hover {
-            background: white;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .slide-nav.prev {
-            left: 20px;
-        }
-
-        .slide-nav.next {
-            right: 20px;
-        }
-
-        .slide-indicators {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            padding: 20px;
-            background: white;
-        }
-
-        .indicator {
-            width: 12px;
-            height: 12px;
-            background: #ddd;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .indicator.active {
-            background: #667eea;
-            transform: scale(1.2);
-        }
-
-        .indicator:hover {
-            background: #764ba2;
-        }
-
-        .loading-message, .error-message {
-            text-align: center;
-            padding: 60px 20px;
-            color: #666;
+        .portfolio-title {
             font-size: 18px;
-            height: 400px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-desc {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: #f1f3f4;
+            color: #555;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        .portfolio-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .portfolio-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .portfolio-link:hover {
+            color: #4c63d2;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 24px;
         }
 
-        .error-message {
-            color: #e74c3c;
+        .service-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .service-desc {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #667eea;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-date {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-date {
+            right: -80px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-date {
+            left: -80px;
+        }
+
+        .timeline-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            font-size: 16px;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-desc {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .contact-form {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-social a {
+            color: #fff;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: #667eea;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .slideshow-container {
-                margin: 10px;
+            .nav-menu, .social-icons {
+                display: none;
             }
-            
-            .student-photo {
-                width: 120px;
-                height: 120px;
+
+            .mobile-toggle {
+                display: flex;
             }
-            
-            .student-info h3 {
-                font-size: 20px;
+
+            .nav-menu.active {
+                display: flex;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #111;
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
             }
-            
-            .percentage {
-                font-size: 28px;
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                gap: 2rem;
+                text-align: center;
             }
-            
-            .slide-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
+
+            .designer-section, .coder-section {
+                text-align: center;
             }
-            
-            .slide-nav.prev {
-                left: 10px;
+
+            .designer-desc, .coder-desc {
+                margin: 0 auto;
             }
-            
-            .slide-nav.next {
-                right: 10px;
+
+            .designer-title, .coder-title {
+                font-size: 36px;
+            }
+
+            .center-image {
+                width: 250px;
+                height: 250px;
+                margin: 0 auto;
+            }
+
+            .floating-code {
+                display: none;
+            }
+
+            .about-content,
+            .skills-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-timeline::before {
+                left: 20px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 50px);
+                margin-left: 50px !important;
+            }
+
+            .timeline-date {
+                left: -60px !important;
+                right: auto !important;
+            }
+
+            .portfolio-tabs {
+                flex-wrap: wrap;
             }
         }
 
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0 1rem;
+            }
 
-/* Sports Section Specific Styles */
-.sports-section {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    color: white;
-    padding: 80px 0;
+            .hero {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .designer-title, .coder-title {
+                font-size: 28px;
+            }
+
+            .center-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        @media (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .designer-section, .coder-section {
+        text-align: center;
+        padding: 0;
+    }
+
+    .designer-desc, .coder-desc {
+        margin: 0 auto;
+    }
+
+    .designer-title, .coder-title {
+        font-size: 48px;
+    }
+
+    .center-image {
+        width: 350px;
+        height: 350px;
+        margin: 0 auto;
+    }
+
+    .floating-code {
+        display: none;
+    }
 }
 
-.sports-section .section-title h2 {
-    color: white;
+@media (max-width: 480px) {
+    .designer-title, .coder-title {
+        font-size: 36px;
+    }
+
+    .center-image {
+        width: 280px;
+        height: 280px;
+    }
 }
 
-.sports-description {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 16px;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    text-align: center;
+
+
+
+/* Add this CSS to your existing styles */
+
+/* Typing cursor animation */
+.typing-cursor {
+    animation: blink 1s infinite;
+    font-weight: 300;
+    color: #666;
 }
 
-.sports-slideshow {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
 }
 
-.sports-slide {
-    flex: 0 0 auto;
+/* Ensure the coder title maintains its existing styling */
+.coder-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 50px;
+    font-weight: 300;
+    color: #666;
+    margin-bottom: 1rem;
+    position: relative;
+    letter-spacing: -2px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    background: white;
 }
 
-.sports-card {
-    text-align: center;
-    max-width: 350px;
-    width: 100%;
-    color: #333;
-}
-
-.sports-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #1e3c72;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.sports-info h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.sports-name {
-    font-size: 18px;
-    color: #1e3c72;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.achievement {
-    font-size: 16px;
-    color: #2a5298;
-    font-weight: 600;
-    margin-bottom: 8px;
-    background: #f0f4ff;
-    padding: 8px 12px;
-    border-radius: 20px;
-    display: inline-block;
-}
-
-.sport-type {
-    font-size: 14px;
-    color: #666;
-    background: #e8f2ff;
-    padding: 6px 12px;
-    border-radius: 15px;
-    display: inline-block;
-    margin: 5px;
-}
-
-.batch-year {
-    font-size: 14px;
-    color: #888;
-    margin-top: 8px;
-}
-
-.sports-summary {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 30px;
-    margin-top: 40px;
-    text-align: center;
-}
-
-.sports-summary h3 {
-    color: white;
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-/* Responsive adjustments for sports section */
+/* Responsive adjustments for typing effect */
 @media (max-width: 768px) {
-    .sports-section {
-        padding: 60px 0;
+    .coder-title {
+        font-size: 48px;
+        justify-content: center;
     }
-    
-    .sports-photo {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .sports-info h3 {
-        font-size: 20px;
-    }
-    
-    .sports-name {
-        font-size: 16px;
-    }
-    
-    .achievement {
-        font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .coder-title {
+        font-size: 36px;
     }
 }
 
@@ -328,1187 +1026,691 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <div class="logo">
-                <!-- REPLACE src WITH YOUR SCHOOL LOGO IMAGE URL -->
-                <img src="https://github.com/yashverma2628/school-project/blob/main/Picsart_25-06-04_10-53-12-323.png?raw=true" alt="School Logo">
-                <span>Shishu Vidya Pith</span>
-            </div>
-            
-<div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-</div>
-
-
-            <ul class="nav-menu">
-                <li><a onclick="scrollToSection('home')">Home</a></li>
-                <li><a onclick="scrollToSection('about')">About</a></li>
-                <li><a onclick="redirectToPage('loginpage.html')">login</a></li>
-                <li><a onclick="redirectToPage('news.html')">news</a></li>
-               <li><a onclick="redirectToPage('gallery.html?category=facilities')">facilities</a></li>
-                 <li><a onclick="redirectToPage('gallery.html')">gallery</a></li>
-                <li><a onclick="redirectToPage('contact.html')">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">D&C</div>
         
-<div class="mobile-menu-overlay" id="mobileMenuOverlay">
-    <div class="mobile-menu-content">
-        <div class="mobile-menu-header">
-            <span class="mobile-menu-title">Menu</span>
-            <div class="mobile-menu-close" onclick="toggleMobileMenu()">
-              <span>&times;</span>
-            </div>
-        </div>
-        <ul class="mobile-nav-menu">
-            <li><a onclick="closeMobileMenuAndNavigate('home')">Home</a></li>
-            <li><a onclick="closeMobileMenuAndNavigate('about')">About</a></li>
-            <li><a onclick="closeMobileMenuAndRedirect('loginpage.html')">Login</a></li>
-            <li><a onclick="closeMobileMenuAndRedirect('news.html')">News</a></li>
-            <li><a onclick="closeMobileMenuAndRedirect('gallery.html?category=facilities')">Facilities</a></li>
-            <li><a onclick="closeMobileMenuAndRedirect('gallery.html')">Gallery</a></li>
-            <li><a onclick="closeMobileMenuAndRedirect('contact.html')">Contact</a></li>
+        <!-- Desktop Menu -->
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#about">about</a></li>
+            <li><a href="#skills">skills</a></li>
+            <li><a href="#portfolio">portfolio</a></li>
+            <li><a href="#services">services</a></li>
+            <li><a href="#experience">experience</a></li>
+            <li><a href="#contact">contact</a></li>
         </ul>
-    </div>
+        
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        
+        <!-- Mobile Toggle -->
+        <div class="mobile-toggle" id="mobileToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+   <!-- Hero Section -->
+<section class="hero">
+    <div class="hero-container">
+        <!-- Left Section - Designer -->
+        <div class="designer-section">
+            <h1 class="passion-one-regular">Designer</h1>
+            <p class="designer-desc">Product designer specialising in UI design and design systems.</p>
+        </div>
+
+        <!-- Center Image -->
+        <div class="center-image">
+            <!-- Replace with actual image or keep placeholder -->
+            <img src="C:\Users\gouri\Downloads\20250228_124128(1).png" alt="Profile Photo">
+        </div>
+
+        <!-- Right Section - Coder -->
+      <div class="coder-section">
+    <h1 class="coder-title">
+        <span id="typing-text"></span>
+        <span class="typing-cursor">|</span> 
+    </h1>
+    <p class="coder-desc">Front end developer who writes clean, elegant and efficient code.</p>
 </div>
+   </div>
+    
 
-
-
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Shishu Vidya Pith Eng. Med. Hr. Sec School</h1>
-            <p>Building character, nurturing excellence, creating future leaders</p>
-            <a onclick="scrollToSection('about')" class="btn">Learn More</a>
-        </div>
-    </section>
-
-    <!-- Principal Section -->
-    <section id="about" class="principal-section">
-        <div class="container">
-            <div class="principal-card fade-in clickable" onclick="redirectToPage('principal.html')">
-                <!-- REPLACE src WITH PRINCIPAL'S PHOTO URL -->
-                <img src="https://github.com/yashverma2628/school-project/blob/main/Screenshot_20250601_134230_Instagram.jpg?raw=true" alt="Principal Photo" class="principal-image">
-                <div class="principal-content">
-                    <h2>Principal's Welcome</h2>
-                    <h3> Sumana chatterjee maa'am </h3>
-                    <p>Welcome to our school website. We are committed to providing quality education that develops students' potential holistically, creating a generation that is smart, skilled, and of good character.</p>
-                    <a class="pbtn">Read More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section id="facilities" class="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Excellence</h2>
-            </div>
-            <div class="features-grid">
-                <a href="principal.html" class="feature-card fade-in">
-                    <!-- REPLACE src WITH SCHOOL BUILDING IMAGE URL -->
-                    <img src="https://github.com/yashverma2628/school-project/blob/main/school%20emoji.png?raw=true" alt="School Profile" class="feature-icon">
-                    <h3>School Profile</h3>
-                    <p>Complete information about our school's vision, mission, and educational programs designed for student success.</p>
-                </a>
-                <a href="gallery.html?category=facilities" class="feature-card fade-in">
-                    <!-- REPLACE src WITH FACILITIES IMAGE URL -->
-                    <img src="https://github.com/yashverma2628/school-project/blob/main/school%20facilities.png?raw=true" alt="Facilities" class="feature-icon">
-                    <h3>Facilities</h3>
-                    <p>Modern and complete facilities supporting effective and comfortable learning activities.</p>
-                </a>
-                <a href="https://www.google.com/maps/place/Shishu+vidyapeeth+bangali+kanya+high+school/@23.1809225,79.967405,17z/data=!3m1!4b1!4m6!3m5!1s0x3981af7ccad90197:0x5dfcc8c96d55ad07!8m2!3d23.1809225!4d79.967405!16s%2Fg%2F11lh514kkm?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D" class="feature-card fade-in">
-                    <!-- REPLACE src WITH LOCATION/MAP IMAGE URL -->
-                    <img src="https://github.com/yashverma2628/school-project/blob/main/school%20location.png?raw=true" alt="Location" class="feature-icon">
-                    <h3>Location</h3>
-                    <p>Strategically located with easy access and a conducive learning environment.</p>
-                </a>
-                <div class="feature-card fade-in">
-                    <!-- REPLACE src WITH HISTORICAL IMAGE URL -->
-                    <img src="https://github.com/yashverma2628/school-project/blob/main/school%20history.png?raw=true" alt="History" class="feature-icon">
-                    <h3>History</h3>
-                    <p>Rich history and educational traditions that have shaped many successful generations.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <!-- REPLACE src WITH ACHIEVEMENTS/TROPHY IMAGE URL -->
-                    <img src="https://github.com/yashverma2628/school-project/blob/main/school%20%20achievements.png?raw=true" alt="Achievements" class="feature-icon">
-                    <h3>Achievements</h3>
-                    <p>Outstanding achievements in academics, sports, and arts at various competition levels.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-<section id="results" class="results-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>OUR SCHOOL RESULTS</h2>
-            <p class="results-description">
-                We are immensely proud of our brilliant students who have achieved exceptional results through their dedication, 
-                hard work, and the unwavering support of our faculty. Their outstanding performance reflects the quality of 
-                education and values we instill at our institution.
-            </p>
-        </div>
-        </div><div class="slideshow-container">
-        <div class="slides-wrapper" id="slideWrapper">
-            <div class="loading-message" id="loadingMessage">Loading student data...</div>
-        </div>
-        
-        <button class="slide-nav prev" id="prevBtn">‹</button>
-        <button class="slide-nav next" id="nextBtn">›</button>
-        
-        <div class="slide-indicators" id="slideIndicators">
-            <!-- Indicators will be generated dynamically -->
-        </div>
-    </div>
-
-        <!-- Results Summary -->
-        <div class="results-summary">
-            <h3>Academic Excellence Summary</h3>
-            <div class="summary-stats">
-                <div class="stat-item">
-                    <div class="stat-number">10</div>
-                    <div class="stat-label">Top Performers</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">95.6%</div>
-                    <div class="stat-label">Highest Score</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">91.8%</div>
-                    <div class="stat-label">Average Score</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">2024</div>
-                    <div class="stat-label">Academic Year</div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Floating Code Elements -->
+    <div class="floating-code code-1">&lt;html&gt;</div>
+    <div class="floating-code code-2">designer;</div>
+    <div class="floating-code code-3">class="yashverma2628"&gt;</div>
+    <div class="floating-code code-4">function code-butiful();&gt;</div>
+    <div class="floating-code code-5"> return website ;&gt;</div>
+    <div class="floating-code code-6">code to impress&gt;</div>
+    <div class="floating-code code-7">html/css/javascript&gt;</div>
 </section>
 
-
-<!-- Sports Student Appreciation Section -->
-<section id="sports-results" class="sports-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>SPORTS EXCELLENCE</h2>
-            <p class="sports-description">
-                Celebrating our talented athletes who have brought glory to our school through their exceptional 
-                performance in various sports competitions and tournaments. Their dedication and hard work inspire 
-                the entire school community.
-            </p>
-        </div>
-        
-        <div class="slideshow-container sports-slideshow">
-            <div class="slides-wrapper" id="sportsSlideWrapper">
-                <div class="loading-message" id="sportsLoadingMessage">Loading sports data...</div>
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2>About Me</h2>
+        <div class="about-content fade-in">
+            <div class="about-text">
+                <p>I'm a passionate designer and developer with over 5 months of experience creating beautiful, functional digital experiences. My journey began with a love for visual design and evolved into a deep appreciation for clean, efficient code.</p>
+                <p>I believe in the power of combining aesthetic beauty with technical excellence. Whether I'm crafting user interfaces or writing code, I strive to create solutions that are not only visually appealing but also performant and user-friendly.</p>
+                <p>When I'm not designing or coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the design and development community.</p>
             </div>
-            
-            <button class="slide-nav prev" id="sportsPrevBtn">‹</button>
-            <button class="slide-nav next" id="sportsNextBtn">›</button>
-            
-            <div class="slide-indicators" id="sportsSlideIndicators">
-                <!-- Indicators will be generated dynamically -->
-            </div>
-        </div>
-
-        <!-- Sports Summary -->
-        <div class="sports-summary">
-            <h3>Sports Achievement Summary</h3>
-            <div class="summary-stats">
+            <div class="about-stats">
                 <div class="stat-item">
-                    <div class="stat-number">8</div>
-                    <div class="stat-label">Sports Champions</div>
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Projects Completed</span>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">Competitions Won</div>
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Happy Clients</span>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Different Sports</div>
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">months Experience</span>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">2024</div>
-                    <div class="stat-label">Current Year</div>
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Awards Won</span>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-
-
-
-    <!-- News and Agenda -->
-    <section id="news" class="news">
-        <div class="container">
-            <div class="section-title">
-                <h2>News and Agenda</h2>
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <h2>Skills & Expertise</h2>
+        <div class="skills-container fade-in">
+            <div class="skill-category design-skills">
+                <h3><i class="fas fa-palette"></i> Design Skills</h3>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-figma"></i>
+                        <div class="skill-name">Figma</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-adobe"></i>
+                        <div class="skill-name">Adobe XD</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-pencil-ruler"></i>
+                        <div class="skill-name">Sketch</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div class="skill-name">UI/UX</div>
+                    </div>
+                    
+                   
+                </div>
             </div>
-            <div class="news-grid">
-                <div class="news-card fade-in">
-                    <!-- REPLACE src WITH HOME LEARNING IMAGE URL -->
-                    <img src="https://github.com/yashverma2628/school-project/blob/main/class%20room.png?raw=true" alt="Learning at Class" class="news-image">
-                    <div class="news-content">
-                        <h3>Learning at Class</h3>
-                        <p>Guidelines and schedules for effective distance learning activities during the pandemic period.</p>
-                        <div class="news-date">March 15, 2024</div>
+            <div class="skill-category coding-skills">
+                <h3><i class="fas fa-code"></i> Coding Skills</h3>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-html5"></i>
+                        <div class="skill-name">HTML5</div>
                     </div>
-                </div>
-                <div class="news-card fade-in">
-                    <!-- REPLACE src WITH HOME ACTIVITIES IMAGE URL -->
-                    <img src="https://github.com/yashverma2628/school-project/blob/main/IMG-20230807-WA0058.jpg?raw=true" alt="Extracurricular activities" class="news-image">
-                    <div class="news-content">
-                        <h3> Extracurricular activities</h3>
-                        <p>Implementation of creative and innovative learning methods to maintain education quality.</p>
-                        <div class="news-date">March 10, 2024</div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <div class="skill-name">CSS3</div>
                     </div>
-                </div>
-                <div class="news-card fade-in">
-                    <!-- REPLACE src WITH ONLINE LEARNING IMAGE URL -->
-                    <img src="https://github.com/yashverma2628/school-project/blob/main/20221221_112010.jpg?raw=true" alt="sports day Activities" class="news-image">
-                    <div class="news-content">
-                        <h3>sports day Activities</h3>
-                        <p>Utilization of technology platforms to support interactive and effective learning processes.</p>
-                        <div class="news-date">March 5, 2024</div>
+                    <div class="skill-item">
+                        <i class="fab fa-js-square"></i>
+                        <div class="skill-name">JavaScript</div>
                     </div>
-                </div>
-                <div class="news-card fade-in">
-                    <!-- REPLACE src WITH ACHIEVEMENT CEREMONY IMAGE URL -->
-                    <img src="https://github.com/yashverma2628/school-project/blob/main/IMG-20230803-WA0080.jpg?raw=true" alt="school captains and counsil" class="news-image">
-                    <div class="news-content">
-                        <h3>school captains and counsil</h3>
-                        <p>Recognition program for students with outstanding achievements in various fields.</p>
-                        <div class="news-date">February 28, 2024</div>
+                    <div class="skill-item">
+                        <i class="fab fa-react"></i>
+                        <div class="skill-name">React</div>
                     </div>
-                </div>
-                <div class="news-card fade-in">
-                    <!-- REPLACE src WITH MORAL EDUCATION IMAGE URL -->
-                    <img src="https://github.com/yashverma2628/school-project/blob/main/WhatsApp%20Image%202023-09-04%20at%2000.37.52.jpg?raw=true" alt="our teaching staff" class="news-image">
-                    <div class="news-content">
-                        <h3>OUR TEACHING STAFF</h3>
-                        <p>Character education programs that emphasize moral values and positive behavior.</p>
-                        <div class="news-date">February 25, 2024</div>
+                    <div class="skill-item">
+                        <i class="fab fa-node-js"></i>
+                        <div class="skill-name">Node.js</div>
                     </div>
-                </div>
-                <div class="news-card fade-in">
-                    <!-- REPLACE src WITH STUDENT REGISTRATION IMAGE URL -->
-                    <img src="https://github.com/yashverma2628/school-project/blob/main/20230905_093923.jpg?raw=true" alt="EVENTS AND CELEBRATIONS" class="news-image">
-                    <div class="news-content">
-                        <h3>EVENTS AND CELEBRATIONS</h3>
-                        <p>Information and procedures for new student admissions for the 2020/2021 academic year.</p>
-                        <div class="news-date">February 20, 2024</div>
+                    <div class="skill-item">
+                        <i class="fab fa-git-alt"></i>
+                        <div class="skill-name">Git</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>Gallery</h2>
-            </div>
-            <div class="gallery-grid">
-                <!-- REPLACE src WITH LIBRARY IMAGE URL -->
-                <div class="image-containerclassroom"><img src="https://github.com/yashverma2628/school-project/blob/main/Snapchat-1439079314.jpg?raw=true" alt="annual function" class="gallery-item fade-in clickable" onclick="openGalleryModal('library')">
-                 <div class="imageclassroom-text"> ANNUAL FUNCTION</div>
-                </div>
-                
-                <!-- REPLACE src WITH CLASSROOM IMAGE URL -->
-                <div class="image-containerclassroom"> <img src="https://github.com/yashverma2628/school-project/blob/main/Snapchat-1773567434%20(1).jpg?raw=true" alt="Classroom" class="gallery-item fade-in clickable" onclick="openGalleryModal('classroom')">
-                   <div class="imageclassroom-text"> OUR CLASSSROOM</div>
-                </div>
-                
-                <!-- REPLACE src WITH STUDENTS GROUP IMAGE URL -->
-               <div class="image-containerclassroom"> <img src="https://github.com/yashverma2628/school-project/blob/main/20230824_095051.jpg?raw=true" alt="Students Group" class="gallery-item fade-in clickable" onclick="openGalleryModal('students')">
-                <div class="imageclassroom-text"> OUR STUDENTS</div>
-                </div>
-                
-                <!-- REPLACE src WITH COMPUTER LAB IMAGE URL -->
-                <div class="image-containerclassroom"><img src="https://github.com/yashverma2628/school-project/blob/main/computer%20lab.png?raw=true" alt="Computer Lab" class="gallery-item fade-in clickable" onclick="openGalleryModal('lab')">
-                <div class="imageclassroom-text"> COMPUTER LAB</div>
-                </div>
-                
-                <!-- REPLACE src WITH ARTS ACTIVITY IMAGE URL -->
-                <div class="image-containerclassroom"><img src="https://github.com/yashverma2628/school-project/blob/main/IMG-20231020-WA0011.jpg?raw=true" alt="Arts Activity" class="gallery-item fade-in clickable" onclick="openGalleryModal('arts')">
-                <div class="imageclassroom-text"> kalakaari</div>
-                </div>
-                
-                <!-- REPLACE src WITH SCIENCE LAB IMAGE URL -->
-                <div class="image-containerclassroom"><img src="https://github.com/yashverma2628/school-project/blob/main/science%20lab.png?raw=true" alt="Science Lab" class="gallery-item fade-in clickable" onclick="openGalleryModal('science')">
-                 <div class="imageclassroom-text"> OUR SCIENCE LAB</div>
+    <!-- Portfolio Section -->
+    <section class="section" id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-tabs fade-in">
+            <button class="tab-btn active" data-tab="all">All Projects</button>
+            <button class="tab-btn" data-tab="design">Design</button>
+            <button class="tab-btn" data-tab="development">Development</button>
+        </div>
+        <div class="portfolio-grid fade-in">
+            <div class="portfolio-item" data-category="design">
+                <div class="portfolio-image">Dynamic school website</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Dynamic school website</h3>
+                    <p class="portfolio-desc">Complete UI/UX design for a modern Dynamic school website with focus on user experience and website optimization.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">UI Design</span>
+                        <span class="tag">Mobile</span>
+                        <span class="tag">java script</span>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="https://yashverma2628.github.io/school-project/" class="portfolio-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i> github</a>
+                    </div>
                 </div>
             </div>
+            <div class="portfolio-item" data-category="development">
+                <div class="portfolio-image"> astrologers website</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">astrologers modern website</h3>
+                    <p class="portfolio-desc">A responsive astrologer's website with real-time contact , form submission, and modern UI components.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">html</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="https://yashverma2628.github.io/cosmic-guru/" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="design">
+                <div class="portfolio-image">Brand Identity</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Brand Identity Design</h3>
+                    <p class="portfolio-desc">Complete brand identity package including logo design, color palette, typography, and brand guidelines for a tech startup.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Branding</span>
+                        <span class="tag">Logo Design</span>
+                        <span class="tag">Adobe Illustrator</span>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        <a href="#" class="portfolio-link"><i class="fab fa-dribbble"></i> Dribbble</a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="development">
+                <div class="portfolio-image">Vue.js Website</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Corporate Website</h3>
+                    <p class="portfolio-desc">Modern corporate website built with Vue.js, featuring smooth animations, responsive design, and SEO optimization.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">SASS</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="design">
+                <div class="portfolio-image">Design System</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Design System</h3>
+                    <p class="portfolio-desc">Comprehensive design system with reusable components, style guides, and documentation for a fintech platform.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Design System</span>
+                        <span class="tag">Components</span>
+                        <span class="tag">Documentation</span>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> View System</a>
+                        <a href="#" class="portfolio-link"><i class="fab fa-figma"></i> Figma</a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="development">
+                <div class="portfolio-image">Full-Stack App</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Task Management App</h3>
+                    <p class="portfolio-desc">Full-stack application with Node.js backend, React frontend, and MongoDB database for team task management.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Full-Stack</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live App</a>
+                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div style="text-align: center; margin-top: 2rem;">
-                <button onclick="navigateToGallery()" class="gbtn">View More</button>
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <h2>Services</h2>
+        <div class="services-grid fade-in">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="service-title">UI/UX Design</h3>
+                <p class="service-desc">Creating intuitive and beautiful user interfaces with focus on user experience, accessibility, and modern design principles.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="service-title">Frontend Development</h3>
+                <p class="service-desc">Building responsive, performant web applications using modern frameworks like React, Vue.js, and cutting-edge technologies.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3 class="service-title">Brand Identity</h3>
+                <p class="service-desc">Developing comprehensive brand identities including logos, color schemes, typography, and brand guidelines that tell your story.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3 class="service-title">Design Systems</h3>
+                <p class="service-desc">Creating scalable design systems with reusable components, style guides, and documentation for consistent user experiences.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3 class="service-title">Full-Stack Development</h3>
+                <p class="service-desc">End-to-end web application development from database design to frontend implementation with modern tech stack.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="service-title">SEO Optimization</h3>
+                <p class="service-desc">Optimizing websites for search engines with technical SEO, performance improvements, and best practices implementation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <h2>Experience</h2>
+        <div class="experience-timeline fade-in">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2024 - Present</div>
+                    <h3 class="timeline-title">first year of collge</h3>
+                    <div class="timeline-company"> UI/UX Designer & Frontend Developer</div>
+                    <p class="timeline-desc">Now I’m in my first year of college, building on my foundation in HTML, CSS, and design. I’ve learned C++, data structures and algorithms, and JavaScript to make websites functional. Currently, I’m designing and developing websites, and also working as a freelance developer and designer to gain real-world experience.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2023 - 2024</div>
+                    <h3 class="timeline-title">completed my 12th </h3>
+                    <div class="timeline-company">intermidiate coder</div>
+                    <p class="timeline-desc">In class 12th, I had to focus more on my board studies, so I couldn’t continue coding regularly. However, I stayed connected to tech by learning design through Figma. Exploring UI/UX design helped me understand the creative side of development and kept my passion for technology alive during that year.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2022 - 2023</div>
+                    <h3 class="timeline-title">11th completed</h3>
+                    <div class="timeline-company">learning html and CSS</div>
+                    <p class="timeline-desc">Then I entered class 11th and began exploring new programming languages. I started learning HTML and CSS, which helped me understand how websites are built. Creating web pages gave me a sense of achievement and deepened my interest in coding, motivating me to continue learning and improving my skills every day.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2021 - 2022</div>
+                    <h3 class="timeline-title">10th passed </h3>
+                    <div class="timeline-company">passionate about coding</div>
+                    <p class="timeline-desc">In class 10th, I discovered my passion for coding while exploring basic programming. I was fascinated by how simple lines of code could create something powerful. Since then, I’ve been eager to learn more, determined to grow in this field and build a successful future in technology and innovation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-container fade-in">
+            <div class="contact-info">
+                <h3>Let's work together!</h3>
+                <p>I'm always interested in new opportunities and exciting projects. Whether you need design, development, or both, let's discuss how we can bring your ideas to life.</p>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <strong>Email</strong><br>
+                        gourishankarverma2628@gmail.com
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <strong>Phone</strong><br>
+                        +91 7747062194
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Location</strong><br>
+                        jabalpur, madhya pradesh
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div>
+                        <strong>Availability</strong><br>
+                        Available for freelance projects
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>School</h3>
-                    <ul>
-                        <li><a onclick="redirectToPage('about.html')">About</a></li>
-                        <li><a onclick="redirectToPage('vision-mission.html')">Vision & Mission</a></li>
-                        <li><a onclick="redirectToPage('organization.html')">Organization</a></li>
-                        <li><a onclick="redirectToPage('news.html')">news</a></li>
-                        <li><a onclick="redirectToPage('gallery.html')">gallery</a></li>
-                        <li><a onclick="redirectToPage('contact.html')">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>General Information</h3>
-                    <ul>
-                        <li><a onclick="redirectToPage('principal.html')">Curriculum</a></li>
-                        <li><a onclick="redirectToPage('principal.html')">Extracurricular</a></li>
-                        <li><a onclick="redirectToPage('index.html')">shishu Vidya pith</a></li>
-                        <li><a onclick="redirectToPage('principal.html')">Guidelines</a></li>
-                        <li><a onclick="redirectToPage('https://www.google.com/maps/place/Shishu+vidyapeeth+bangali+kanya+high+school/@23.1809225,79.967405,17z/data=!3m1!4b1!4m6!3m5!1s0x3981af7ccad90197:0x5dfcc8c96d55ad07!8m2!3d23.1809225!4d79.967405!16s%2Fg%2F11lh514kkm?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D')">Location</a></li>
-                        <li><a onclick="redirectToPage('contact.html')">Contact</a></li>
-                    </ul>
-                </div>
-              <div class="footer-section">
-                    <h3>Social Media</h3>
-                     <ul>
-                     <li><a onclick="openSocialMedia('facebook')"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-                     <li><a onclick="openSocialMedia('instagram')"><i class="fab fa-instagram"></i> Instagram</a></li>
-                      <li><a onclick="openSocialMedia('youtube')"><i class="fab fa-youtube"></i> YouTube</a></li>
-                       </ul>
-             </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 shishu vidya pith. All rights reserved. Hosting by Yash Verma</p>
-            </div>
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+            <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
         </div>
+        <p>&copy; 2025 Yash Verma. All rights reserved. Made with ❤️ and lots of ☕</p>
     </footer>
 
-    
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle functionality
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
 
-
-
-<script>
-     class StudentSlideshow {
-    constructor() {
-        this.students = [];
-        this.currentSlide = 0;
-        this.slideInterval = null;
-        this.autoSlideDelay = 5000; // 5 seconds
-        
-        this.slideWrapper = document.getElementById('slideWrapper');
-        this.indicatorsContainer = document.getElementById('slideIndicators');
-        this.loadingMessage = document.getElementById('loadingMessage');
-        this.prevBtn = document.getElementById('prevBtn');
-        this.nextBtn = document.getElementById('nextBtn');
-        
-        this.init();
-    }
-
-    async init() {
-        try {
-            this.showLoadingMessage();
-            await this.loadStudentData();
-            this.hideLoadingMessage();
-            this.renderSlideshow();
-            this.setupEventListeners();
-            this.startAutoSlide();
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
             
-            console.log(`Slideshow initialized with ${this.students.length} students`);
-        } catch (error) {
-            this.showError('Failed to load student data: ' + error.message);
-            console.error('Slideshow initialization error:', error);
-        }
-    }
-
-    showLoadingMessage() {
-        if (this.loadingMessage) {
-            this.loadingMessage.style.display = 'flex';
-        }
-    }
-
-    hideLoadingMessage() {
-        if (this.loadingMessage) {
-            this.loadingMessage.style.display = 'none';
-        }
-    }
-
-    async loadStudentData() {
-        try {
-            console.log('Loading student data from students_data.json...');
-            const response = await fetch('students_data.json');
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const data = await response.json();
-            console.log('Raw data loaded:', data);
-            
-            // Your JSON is an array, so handle it directly
-            if (Array.isArray(data)) {
-                this.students = this.processStudentData(data);
+            // Animate hamburger menu
+            const spans = mobileToggle.querySelectorAll('span');
+            if (navMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
             } else {
-                throw new Error('Expected an array of students');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
             }
-            
-            console.log(`Processed ${this.students.length} valid students:`, this.students);
-            
-            if (this.students.length === 0) {
-                throw new Error('No valid student data found');
-            }
-            
-        } catch (error) {
-            console.error('Error loading student data:', error);
-            console.warn('Using fallback data');
-            
-            // Your exact JSON data as fallback
-            const fallbackData = [
-                {
-                    "name": "yoyo",
-                    "percentage": 88,
-                    "batch": "2020",
-                    "image": "https://raw.githubusercontent.com/yashverma2628/school-project/main/images/student_1749300467103_school%20%20achievements.png"
-                },
-                {
-                    "name": "yoyo",
-                    "percentage": 99,
-                    "batch": "2026",
-                    "image": "https://raw.githubusercontent.com/yashverma2628/school-project/main/images/student_1749300616310_IMG-20230807-WA0022.jpg"
-                }
-            ];
-            
-            this.students = this.processStudentData(fallbackData);
-        }
-    }
-
-    processStudentData(rawData) {
-        return rawData.map((student, index) => {
-            if (!student || typeof student !== 'object') {
-                console.warn(`Invalid student data at index ${index}:`, student);
-                return null;
-            }
-            
-            // Process your JSON structure specifically
-            return {
-                name: student.name || `Student ${index + 1}`,
-                imageUrl: student.image || 'https://via.placeholder.com/200x200?text=No+Image',
-                percentage: this.formatPercentage(student.percentage),
-                batchYear: this.formatBatch(student.batch)
-            };
-        }).filter(student => student !== null); // Remove invalid entries
-    }
-
-    formatPercentage(percentage) {
-        if (typeof percentage === 'number') {
-            return `${percentage}%`;
-        } else if (typeof percentage === 'string') {
-            // If it already has %, keep it; otherwise add %
-            return percentage.includes('%') ? percentage : `${percentage}%`;
-        }
-        return 'N/A';
-    }
-
-    formatBatch(batch) {
-        if (batch) {
-            return `Batch ${batch}`;
-        }
-        return 'Unknown Batch';
-    }
-
-    renderSlideshow() {
-        console.log(`Rendering slideshow with ${this.students.length} students`);
-        
-        if (this.students.length === 0) {
-            this.slideWrapper.innerHTML = '<div class="error-message">No student data available</div>';
-            return;
-        }
-
-        // Clear existing content
-        this.slideWrapper.innerHTML = '';
-        this.indicatorsContainer.innerHTML = '';
-
-        // Create slides container
-        const slidesContainer = document.createElement('div');
-        slidesContainer.className = 'slides-container';
-        slidesContainer.style.width = `${this.students.length * 100}%`;
-
-        // Create slides
-        this.students.forEach((student, index) => {
-            console.log(`Creating slide ${index + 1} for:`, student.name);
-            const slide = this.createSlide(student, index);
-            slidesContainer.appendChild(slide);
         });
 
-        this.slideWrapper.appendChild(slidesContainer);
-
-        // Create indicators
-        this.students.forEach((_, index) => {
-            const indicator = this.createIndicator(index);
-            this.indicatorsContainer.appendChild(indicator);
-        });
-
-        // Show first slide
-        this.showSlide(0);
-        console.log('Slideshow rendering complete');
-    }
-
-    createSlide(student, index) {
-        const slide = document.createElement('div');
-        slide.className = 'student-slide';
-        slide.style.width = `${100 / this.students.length}%`;
-        
-        // Handle image loading errors
-        const imageUrl = student.imageUrl;
-        const fallbackImage = 'https://via.placeholder.com/200x200?text=' + encodeURIComponent(student.name.charAt(0));
-        
-        slide.innerHTML = `
-            <div class="student-card">
-                <img src="${imageUrl}" 
-                     alt="${student.name}" 
-                     class="student-photo" 
-                     loading="lazy"
-                     onerror="this.src='${fallbackImage}'">
-                <div class="student-info">
-                    <h3>${student.name}</h3>
-                    <div class="percentage">${student.percentage}</div>
-                    <div class="batch">${student.batchYear}</div>
-                </div>
-            </div>
-        `;
-        
-        return slide;
-    }
-
-    createIndicator(index) {
-        const indicator = document.createElement('div');
-        indicator.className = 'indicator';
-        indicator.setAttribute('data-slide', index);
-        indicator.addEventListener('click', () => {
-            this.goToSlide(index);
-        });
-        return indicator;
-    }
-
-    showSlide(index) {
-        const slidesContainer = this.slideWrapper.querySelector('.slides-container');
-        const indicators = this.indicatorsContainer.querySelectorAll('.indicator');
-
-        if (!slidesContainer) {
-            console.error('Slides container not found');
-            return;
-        }
-
-        // Ensure index is within bounds
-        if (index < 0) {
-            index = this.students.length - 1;
-        } else if (index >= this.students.length) {
-            index = 0;
-        }
-
-        // Update current slide index
-        this.currentSlide = index;
-
-        // Move slides container
-        const translateX = -index * (100 / this.students.length);
-        slidesContainer.style.transform = `translateX(${translateX}%)`;
-
-        // Update indicators
-        indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === index);
-        });
-
-        console.log(`Showing slide ${index + 1} of ${this.students.length}`);
-    }
-
-    goToSlide(index) {
-        if (index >= 0 && index < this.students.length) {
-            this.showSlide(index);
-            this.resetAutoSlide();
-        }
-    }
-
-    nextSlide() {
-        const nextIndex = (this.currentSlide + 1) % this.students.length;
-        this.showSlide(nextIndex);
-    }
-
-    prevSlide() {
-        const prevIndex = (this.currentSlide - 1 + this.students.length) % this.students.length;
-        this.showSlide(prevIndex);
-    }
-
-    startAutoSlide() {
-        if (this.students.length <= 1) return;
-        
-        this.slideInterval = setInterval(() => {
-            this.nextSlide();
-        }, this.autoSlideDelay);
-    }
-
-    stopAutoSlide() {
-        if (this.slideInterval) {
-            clearInterval(this.slideInterval);
-            this.slideInterval = null;
-        }
-    }
-
-    resetAutoSlide() {
-        this.stopAutoSlide();
-        this.startAutoSlide();
-    }
-
-    setupEventListeners() {
-        // Navigation buttons
-        if (this.prevBtn) {
-            this.prevBtn.addEventListener('click', () => {
-                this.prevSlide();
-                this.resetAutoSlide();
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const spans = mobileToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
             });
-        }
+        });
 
-        if (this.nextBtn) {
-            this.nextBtn.addEventListener('click', () => {
-                this.nextSlide();
-                this.resetAutoSlide();
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
-        }
-
-        // Pause on hover
-        this.slideWrapper.addEventListener('mouseenter', () => {
-            this.stopAutoSlide();
         });
 
-        this.slideWrapper.addEventListener('mouseleave', () => {
-            this.startAutoSlide();
-        });
+        // Portfolio filtering
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                this.prevSlide();
-                this.resetAutoSlide();
-            } else if (e.key === 'ArrowRight') {
-                this.nextSlide();
-                this.resetAutoSlide();
-            }
-        });
-
-        // Touch/swipe support
-        let startX = 0;
-        let endX = 0;
-
-        this.slideWrapper.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            this.stopAutoSlide();
-        });
-
-        this.slideWrapper.addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].clientX;
-            const diff = startX - endX;
-
-            if (Math.abs(diff) > 50) {
-                if (diff > 0) {
-                    this.nextSlide();
-                } else {
-                    this.prevSlide();
-                }
-            }
-            this.resetAutoSlide();
-        });
-    }
-
-    showError(message) {
-        this.slideWrapper.innerHTML = `<div class="error-message">${message}</div>`;
-        console.error('Slideshow error:', message);
-    }
-}
-
-// Initialize slideshow when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    const slideshow = new StudentSlideshow();
-    window.slideshow = slideshow;
-});
-        // Initialize slideshow when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            const slideshow = new StudentSlideshow();
-            window.slideshow = slideshow;
-        });
-
-        
-        // Make sure DOM is fully loaded before executing scripts
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM fully loaded and parsed');
-            
-            // Initialize slideshow
-            showSlide(currentSlideIndex);
-            
-            // Add animation observers
-            initializeAnimations();
-        });
-
-        // Function to redirect to different pages
-        function redirectToPage(pageName) {
-            console.log('Redirecting to:', pageName);
-            try {
-                window.location.href = pageName;
-            } catch (error) {
-                console.error('Error redirecting to page:', error);
-                // Fallback method
-                window.location.assign(pageName);
-            }
-        }
-
-        // Specific function for gallery navigation (more robust)
-        function navigateToGallery() {
-            console.log('Navigate to gallery clicked');
-            try {
-                // Multiple fallback methods
-                if (window.location.href) {
-                    window.location.href = 'gallery.html';
-                } else if (window.location.assign) {
-                    window.location.assign('gallery.html');
-                } else {
-                    window.location = 'gallery.html';
-                }
-            } catch (error) {
-                console.error('Error navigating to gallery:', error);
-                alert('Unable to navigate to gallery. Please check if gallery.html exists.');
-            }
-        }
-
-        // Function to scroll to sections
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-
-        // Function to open social media links
-        function openSocialMedia(platform) {
-            const urls = {
-                'facebook': 'https://facebook.com/smpn1cibadak', // Replace with actual URL
-                'instagram': 'https://instagram.com/smpn1cibadak', // Replace with actual URL
-                'youtube': 'https://youtube.com/smpn1cibadak' // Replace with actual URL
-            };
-            window.open(urls[platform], '_blank');
-        }
-
-        // Function to open gallery modal (you can customize this)
-        function openGalleryModal(galleryType) {
-            // This can redirect to a specific gallery page or open a modal
-            redirectToPage(`gallery-${galleryType}.html`);
-        }
-
-        // Initialize animations
-        function initializeAnimations() {
-            // Add animation on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                tabBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.tab;
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
                     }
                 });
-            }, observerOptions);
-
-            // Observe all elements that should animate
-            document.querySelectorAll('.feature-card, .news-card, .gallery-item, .principal-card').forEach(el => {
-                observer.observe(el);
             });
-        }
+        });
 
-// Function to toggle mobile menu
-function toggleMobileMenu() {
-    const overlay = document.getElementById('mobileMenuOverlay');
-    const hamburger = document.querySelector('.mobile-menu-toggle');
-    
-    if (overlay.classList.contains('active')) {
-        overlay.classList.remove('active');
-        hamburger.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    } else {
-        overlay.classList.add('active');
-        hamburger.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-// Function to close mobile menu and navigate to section
-function closeMobileMenuAndNavigate(sectionId) {
-    toggleMobileMenu();
-    setTimeout(() => {
-        scrollToSection(sectionId);
-    }, 300);
-}
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
-// Function to close mobile menu and redirect to page
-function closeMobileMenuAndRedirect(pageName) {
-    toggleMobileMenu();
-    setTimeout(() => {
-        redirectToPage(pageName);
-    }, 300);
-}
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
 
-// Close mobile menu when clicking outside
-document.addEventListener('DOMContentLoaded', function() {
-    const overlay = document.getElementById('mobileMenuOverlay');
-    const menuContent = document.querySelector('.mobile-menu-content');
-    
-    overlay.addEventListener('click', function(e) {
-        if (e.target === overlay) {
-            toggleMobileMenu();
-        }
-    });
-    
-    // Close menu on window resize if screen becomes larger
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && overlay.classList.contains('active')) {
-            toggleMobileMenu();
-        }
-    });
-});
-
-class SportsSlideshow {
-    constructor() {
-        this.sportsStudents = [];
-        this.currentSlide = 0;
-        this.slideInterval = null;
-        this.autoSlideDelay = 6000; // 6 seconds
-        
-        this.slideWrapper = document.getElementById('sportsSlideWrapper');
-        this.indicatorsContainer = document.getElementById('sportsSlideIndicators');
-        this.loadingMessage = document.getElementById('sportsLoadingMessage');
-        this.prevBtn = document.getElementById('sportsPrevBtn');
-        this.nextBtn = document.getElementById('sportsNextBtn');
-        
-        this.init();
-    }
-
-    async init() {
-        try {
-            this.showLoadingMessage();
-            await this.loadSportsData();
-            this.hideLoadingMessage();
-            this.renderSlideshow();
-            this.setupEventListeners();
-            this.startAutoSlide();
+        // Contact form submission
+        const contactForm = document.querySelector('.contact-form form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            console.log(`Sports slideshow initialized with ${this.sportsStudents.length} students`);
-        } catch (error) {
-            this.showError('Failed to load sports data: ' + error.message);
-            console.error('Sports slideshow initialization error:', error);
-        }
-    }
-
-    showLoadingMessage() {
-        if (this.loadingMessage) {
-            this.loadingMessage.style.display = 'flex';
-        }
-    }
-
-    hideLoadingMessage() {
-        if (this.loadingMessage) {
-            this.loadingMessage.style.display = 'none';
-        }
-    }
-
-    async loadSportsData() {
-        try {
-            console.log('Loading sports data from sports_students_data.json...');
-            const response = await fetch('sports_students_data.json');
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
             
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return;
             }
             
-            const data = await response.json();
-            console.log('Raw sports data loaded:', data);
+            // Simulate form submission
+            const submitBtn = this.querySelector('.btn-primary');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
             
-            if (Array.isArray(data)) {
-                this.sportsStudents = this.processSportsData(data);
+            setTimeout(() => {
+                alert('Thank you for your message! I\'ll get back to you soon.');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(17, 17, 17, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
             } else {
-                throw new Error('Expected an array of sports students');
+                navbar.style.background = '#111';
+                navbar.style.backdropFilter = 'none';
             }
-            
-            console.log(`Processed ${this.sportsStudents.length} valid sports students:`, this.sportsStudents);
-            
-            if (this.sportsStudents.length === 0) {
-                throw new Error('No valid sports student data found');
-            }
-            
-        } catch (error) {
-            console.error('Error loading sports data:', error);
-            console.warn('Using fallback sports data');
-            
-            // Fallback data
-            const fallbackData = [
-                {
-                    "name": "Rahul Kumar",
-                    "achievement": "State Champion",
-                    "competition": "Inter-State Football Championship",
-                    "sport": "Football",
-                    "batch": "2023",
-                    "image": "https://via.placeholder.com/200x200?text=Rahul"
-                },
-                {
-                    "name": "Priya Sharma",
-                    "achievement": "Gold Medal",
-                    "competition": "District Athletics Meet",
-                    "sport": "Athletics",
-                    "batch": "2024",
-                    "image": "https://via.placeholder.com/200x200?text=Priya"
+        });
+
+        // Stats counter animation
+        const statsNumbers = document.querySelectorAll('.stat-number');
+        const startCounting = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.textContent);
+                    let count = 0;
+                    const increment = target / 5;
+                    
+                    const timer = setInterval(() => {
+                        count += increment;
+                        if (count >= target) {
+                            entry.target.textContent = target + '+';
+                            clearInterval(timer);
+                        } else {
+                            entry.target.textContent = Math.floor(count) + '+';
+                        }
+                    }, 30);
+                    
+                    observer.unobserve(entry.target);
                 }
-            ];
-            
-            this.sportsStudents = this.processSportsData(fallbackData);
-        }
-    }
-
-    processSportsData(rawData) {
-        return rawData.map((student, index) => {
-            if (!student || typeof student !== 'object') {
-                console.warn(`Invalid sports student data at index ${index}:`, student);
-                return null;
-            }
-            
-            return {
-                name: student.name || `Student ${index + 1}`,
-                imageUrl: student.image || 'https://via.placeholder.com/200x200?text=No+Image',
-                achievement: student.achievement || 'Participant',
-                competition: student.competition || 'School Competition',
-                sport: student.sport || 'General Sports',
-                batchYear: this.formatBatch(student.batch)
-            };
-        }).filter(student => student !== null);
-    }
-
-    formatBatch(batch) {
-        if (batch) {
-            return `Batch ${batch}`;
-        }
-        return 'Unknown Batch';
-    }
-
-    renderSlideshow() {
-        console.log(`Rendering sports slideshow with ${this.sportsStudents.length} students`);
-        
-        if (this.sportsStudents.length === 0) {
-            this.slideWrapper.innerHTML = '<div class="error-message">No sports data available</div>';
-            return;
-        }
-
-        this.slideWrapper.innerHTML = '';
-        this.indicatorsContainer.innerHTML = '';
-
-        const slidesContainer = document.createElement('div');
-        slidesContainer.className = 'slides-container';
-        slidesContainer.style.width = `${this.sportsStudents.length * 100}%`;
-
-        this.sportsStudents.forEach((student, index) => {
-            const slide = this.createSportsSlide(student, index);
-            slidesContainer.appendChild(slide);
-        });
-
-        this.slideWrapper.appendChild(slidesContainer);
-
-        this.sportsStudents.forEach((_, index) => {
-            const indicator = this.createIndicator(index);
-            this.indicatorsContainer.appendChild(indicator);
-        });
-
-        this.showSlide(0);
-        console.log('Sports slideshow rendering complete');
-    }
-
-    createSportsSlide(student, index) {
-        const slide = document.createElement('div');
-        slide.className = 'sports-slide';
-        slide.style.width = `${100 / this.sportsStudents.length}%`;
-        
-        const imageUrl = student.imageUrl;
-        const fallbackImage = 'https://via.placeholder.com/200x200?text=' + encodeURIComponent(student.name.charAt(0));
-        
-        slide.innerHTML = `
-            <div class="sports-card">
-                <img src="${imageUrl}" 
-                     alt="${student.name}" 
-                     class="sports-photo" 
-                     loading="lazy"
-                     onerror="this.src='${fallbackImage}'">
-                <div class="sports-info">
-                    <h3>${student.name}</h3>
-                    <div class="achievement">${student.achievement}</div>
-                    <div class="sports-name">${student.competition}</div>
-                    <div class="sport-type">${student.sport}</div>
-                    <div class="batch-year">${student.batchYear}</div>
-                </div>
-            </div>
-        `;
-        
-        return slide;
-    }
-
-    createIndicator(index) {
-        const indicator = document.createElement('div');
-        indicator.className = 'indicator';
-        indicator.setAttribute('data-slide', index);
-        indicator.addEventListener('click', () => {
-            this.goToSlide(index);
-        });
-        return indicator;
-    }
-
-    showSlide(index) {
-        const slidesContainer = this.slideWrapper.querySelector('.slides-container');
-        const indicators = this.indicatorsContainer.querySelectorAll('.indicator');
-
-        if (!slidesContainer) {
-            console.error('Sports slides container not found');
-            return;
-        }
-
-        if (index < 0) {
-            index = this.sportsStudents.length - 1;
-        } else if (index >= this.sportsStudents.length) {
-            index = 0;
-        }
-
-        this.currentSlide = index;
-
-        const translateX = -index * (100 / this.sportsStudents.length);
-        slidesContainer.style.transform = `translateX(${translateX}%)`;
-
-        indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === index);
-        });
-
-        console.log(`Showing sports slide ${index + 1} of ${this.sportsStudents.length}`);
-    }
-
-    goToSlide(index) {
-        if (index >= 0 && index < this.sportsStudents.length) {
-            this.showSlide(index);
-            this.resetAutoSlide();
-        }
-    }
-
-    nextSlide() {
-        const nextIndex = (this.currentSlide + 1) % this.sportsStudents.length;
-        this.showSlide(nextIndex);
-    }
-
-    prevSlide() {
-        const prevIndex = (this.currentSlide - 1 + this.sportsStudents.length) % this.sportsStudents.length;
-        this.showSlide(prevIndex);
-    }
-
-    startAutoSlide() {
-        if (this.sportsStudents.length <= 1) return;
-        
-        this.slideInterval = setInterval(() => {
-            this.nextSlide();
-        }, this.autoSlideDelay);
-    }
-
-    stopAutoSlide() {
-        if (this.slideInterval) {
-            clearInterval(this.slideInterval);
-            this.slideInterval = null;
-        }
-    }
-
-    resetAutoSlide() {
-        this.stopAutoSlide();
-        this.startAutoSlide();
-    }
-
-    setupEventListeners() {
-        if (this.prevBtn) {
-            this.prevBtn.addEventListener('click', () => {
-                this.prevSlide();
-                this.resetAutoSlide();
             });
-        }
+        };
 
-        if (this.nextBtn) {
-            this.nextBtn.addEventListener('click', () => {
-                this.nextSlide();
-                this.resetAutoSlide();
-            });
-        }
-
-        this.slideWrapper.addEventListener('mouseenter', () => {
-            this.stopAutoSlide();
+        const statsObserver = new IntersectionObserver(startCounting, {
+            threshold: 0.5
         });
 
-        this.slideWrapper.addEventListener('mouseleave', () => {
-            this.startAutoSlide();
+        statsNumbers.forEach(num => {
+            statsObserver.observe(num);
         });
 
-        // Touch/swipe support
-        let startX = 0;
-        let endX = 0;
 
-        this.slideWrapper.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            this.stopAutoSlide();
-        });
 
-        this.slideWrapper.addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].clientX;
-            const diff = startX - endX;
 
-            if (Math.abs(diff) > 50) {
-                if (diff > 0) {
-                    this.nextSlide();
-                } else {
-                    this.prevSlide();
-                }
-            }
-            this.resetAutoSlide();
-        });
+
+        // Add this JavaScript code to your existing script section
+
+// Typing effect for coder heading
+class TypeWriter {
+    constructor(element, words, wait = 3000) {
+        this.element = element;
+        this.words = words;
+        this.txt = '';
+        this.wordIndex = 0;
+        this.wait = parseInt(wait, 10);
+        this.type();
+        this.isDeleting = false;
     }
 
-    showError(message) {
-        this.slideWrapper.innerHTML = `<div class="error-message">${message}</div>`;
-        console.error('Sports slideshow error:', message);
+    type() {
+        // Current index of word
+        const current = this.wordIndex % this.words.length;
+        // Get full text of current word
+        const fullTxt = this.words[current];
+
+        // Check if deleting
+        if (this.isDeleting) {
+            // Remove character
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            // Add character
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        // Insert txt into element
+        this.element.innerHTML = `<span>${this.txt}</span>`;
+
+        // Initial type speed
+        let typeSpeed = 100;
+
+        if (this.isDeleting) {
+            // Faster when deleting
+            typeSpeed /= 2;
+        }
+
+        // If word is complete
+        if (!this.isDeleting && this.txt === fullTxt) {
+            // Make pause at end
+            typeSpeed = this.wait;
+            // Set delete to true
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            // Move to next word
+            this.wordIndex++;
+            // Pause before start typing
+            typeSpeed = 500;
+        }
+
+        setTimeout(() => this.type(), typeSpeed);
     }
 }
 
-// Initialize sports slideshow when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Add a small delay to ensure the academic slideshow is initialized first
-    setTimeout(() => {
-        const sportsSlideshow = new SportsSlideshow();
-        window.sportsSlideshow = sportsSlideshow;
-    }, 500);
+// Initialize typing effect when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const typingElement = document.getElementById('typing-text');
+    
+    if (typingElement) {
+        // Words to type - you can customize these
+        const words = ['Coder', 'Developer', 'Programmer', 'Engineer'];
+        
+        // Initialize typewriter effect
+        new TypeWriter(typingElement, words, 2000);
+    }
 });
-
-
     </script>
 </body>
 </html>
