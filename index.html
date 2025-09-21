@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Designer & Coder</title>
+    <title>Portfolio - Video Editor & Content Creator</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -129,8 +129,8 @@
     position: relative;
 }
 
-/* Left Section - Designer */
-.designer-section {
+/* Left Section - Content Creator */
+.creator-section {
     text-align: center;
     position: relative;
     padding-right: 2rem;
@@ -138,21 +138,21 @@
 }
 
 .passion-one-regular {
-    font-size: 72px;
+    font-size: 60px;
     font-weight: 300;
     color: #999;
     margin-bottom: 1rem;
     position: relative;
    font-family: passion-one-regular, cursive;
     letter-spacing: -2px;
-    background: linear-gradient(90deg,#54a0ff,#b374f3da,#ffc863df);
+    background: linear-gradient(90deg,#ff6b6b,#feca57,#48dbfb);
     background-clip: text;
     color: transparent;
    transition: animate 3s ease-in-out infinite;
 }
 
 
-.designer-desc {
+.creator-desc {
     font-size: 18px;
     color: #999;
     line-height: 1.6;
@@ -224,14 +224,14 @@
     font-weight: 600;
 }
 
-/* Right Section - Coder */
-.coder-section {
+/* Right Section - Editor */
+.editor-section {
     text-align: left;
     position: relative;
     padding-left: 2rem;
 }
 
-.coder-title {
+.editor-title {
     font-family: 'JetBrains Mono', monospace;
     font-size: 72px;
     font-weight: 300;
@@ -243,19 +243,19 @@
 
 
 
-.coder-title::before {
-    content: '<';
+.editor-title::before {
+    content: '✂';
     color: #666;
     font-weight: 300;
 }
 
-.coder-title::after {
-    content: '/>';
+.editor-title::after {
+    content: '🎬';
     color: #666;
     font-weight: 300;
 }
 
-.coder-desc {
+.editor-desc {
     font-size: 18px;
     color: #999;
     line-height: 1.6;
@@ -263,8 +263,8 @@
     font-weight: 300;
 }
 
-/* Floating Code Elements - More subtle */
-.floating-code {
+/* Floating Video Elements */
+.floating-video {
     position: absolute;
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
@@ -274,46 +274,46 @@
     animation: float 8s ease-in-out infinite;
 }
 
-.code-1 {
+.video-1 {
     top: 20%;
     right: 5%;
     animation-delay: 0s;
 }
 
-.code-2 {
+.video-2 {
     bottom: 35%;
     right: 10%;
     animation-delay: 3s;
 }
 
-.code-3 {
+.video-3 {
     top: 45%;
     right: 50%;
     animation-delay: 3s;
 }
 
-.code-4 {
+.video-4 {
     top: 20%;
     right: 10%;
     animation-delay: 3s;
 }
 
 
-.code-5 {
+.video-5 {
     top: 75%;
     right: 5%;
     animation-delay: 3s;
 }
 
 
-.code-6 {
+.video-6 {
     top: 15%;
     right: 25%;
     animation-delay: 3s;
 }
 
 
-.code-7 {
+.video-7 {
     top: 95%;
     right: 10%;
     animation-delay: 5s;
@@ -427,11 +427,11 @@
             text-align: center;
         }
 
-        .design-skills h3 {
+        .editing-skills h3 {
             color: #e74c3c;
         }
 
-        .coding-skills h3 {
+        .content-skills h3 {
             color: #3498db;
         }
 
@@ -460,11 +460,11 @@
             margin-bottom: 1rem;
         }
 
-        .design-skills .skill-item i {
+        .editing-skills .skill-item i {
             color: #e74c3c;
         }
 
-        .coding-skills .skill-item i {
+        .content-skills .skill-item i {
             color: #3498db;
         }
 
@@ -472,6 +472,93 @@
             font-size: 14px;
             font-weight: 500;
             color: #555;
+        }
+
+        /* Video Showcase Section */
+        .video-showcase {
+            background-color: #f8f9fa;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .video-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .video-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-content {
+            padding: 1.5rem;
+        }
+
+        .video-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-desc {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 1rem;
+        }
+
+        .video-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: #f1f3f4;
+            color: #555;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        .video-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .video-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .video-link:hover {
+            color: #4c63d2;
         }
 
         /* Portfolio Section */
@@ -549,14 +636,6 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 1rem;
-        }
-
-        .tag {
-            background: #f1f3f4;
-            color: #555;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 12px;
         }
 
         .portfolio-links {
@@ -834,15 +913,15 @@
                 text-align: center;
             }
 
-            .designer-section, .coder-section {
+            .creator-section, .editor-section {
                 text-align: center;
             }
 
-            .designer-desc, .coder-desc {
+            .creator-desc, .editor-desc {
                 margin: 0 auto;
             }
 
-            .designer-title, .coder-title {
+            .passion-one-regular, .editor-title {
                 font-size: 36px;
             }
 
@@ -852,7 +931,7 @@
                 margin: 0 auto;
             }
 
-            .floating-code {
+            .floating-video {
                 display: none;
             }
 
@@ -884,6 +963,10 @@
             .portfolio-tabs {
                 flex-wrap: wrap;
             }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -899,7 +982,7 @@
                 padding: 3rem 1rem;
             }
 
-            .designer-title, .coder-title {
+            .passion-one-regular, .editor-title {
                 font-size: 28px;
             }
 
@@ -939,16 +1022,16 @@
         text-align: center;
     }
 
-    .designer-section, .coder-section {
+    .creator-section, .editor-section {
         text-align: center;
         padding: 0;
     }
 
-    .designer-desc, .coder-desc {
+    .creator-desc, .editor-desc {
         margin: 0 auto;
     }
 
-    .designer-title, .coder-title {
+    .passion-one-regular, .editor-title {
         font-size: 48px;
     }
 
@@ -958,13 +1041,13 @@
         margin: 0 auto;
     }
 
-    .floating-code {
+    .floating-video {
         display: none;
     }
 }
 
 @media (max-width: 480px) {
-    .designer-title, .coder-title {
+    .passion-one-regular, .editor-title {
         font-size: 36px;
     }
 
@@ -995,8 +1078,8 @@
     }
 }
 
-/* Ensure the coder title maintains its existing styling */
-.coder-title {
+/* Ensure the editor title maintains its existing styling */
+.editor-title {
     font-family: 'JetBrains Mono', monospace;
     font-size: 50px;
     font-weight: 300;
@@ -1010,14 +1093,14 @@
 
 /* Responsive adjustments for typing effect */
 @media (max-width: 768px) {
-    .coder-title {
+    .editor-title {
         font-size: 48px;
         justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
-    .coder-title {
+    .editor-title {
         font-size: 36px;
     }
 }
@@ -1029,12 +1112,13 @@
     <!-- Navigation -->
     <nav class="navbar">
         <!-- Logo -->
-        <div class="logo">D&C</div>
+        <div class="logo">V&E</div>
         
         <!-- Desktop Menu -->
         <ul class="nav-menu" id="navMenu">
             <li><a href="#about">about</a></li>
             <li><a href="#skills">skills</a></li>
+            <li><a href="#videos">videos</a></li>
             <li><a href="#portfolio">portfolio</a></li>
             <li><a href="#services">services</a></li>
             <li><a href="#experience">experience</a></li>
@@ -1043,10 +1127,10 @@
         
         <!-- Social Icons -->
         <div class="social-icons">
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Vimeo"><i class="fab fa-vimeo-v"></i></a>
         </div>
         
         <!-- Mobile Toggle -->
@@ -1060,10 +1144,10 @@
    <!-- Hero Section -->
 <section class="hero">
     <div class="hero-container">
-        <!-- Left Section - Designer -->
-        <div class="designer-section">
-            <h1 class="passion-one-regular">Designer</h1>
-            <p class="designer-desc">Product designer specialising in UI design and design systems.</p>
+        <!-- Left Section - Content Creator -->
+        <div class="creator-section">
+            <h1 class="passion-one-regular">Content Creator</h1>
+            <p class="creator-desc">Storyteller specializing in visual narratives and engaging content creation.</p>
         </div>
 
         <!-- Center Image -->
@@ -1072,25 +1156,25 @@
             <img src="https://res.cloudinary.com/dprxaeuwi/image/upload/v1756402798/h4ayveco3ihl1zex3xos.png" alt="Profile Photo">
         </div>
 
-        <!-- Right Section - Coder -->
-      <div class="coder-section">
-    <h1 class="coder-title">
+        <!-- Right Section - Editor -->
+      <div class="editor-section">
+    <h1 class="editor-title">
         <span id="typing-text"></span>
         <span class="typing-cursor">|</span> 
     </h1>
-    <p class="coder-desc">Front end developer who writes clean, elegant and efficient code.</p>
+    <p class="editor-desc">Video editor who crafts compelling stories through seamless cuts and visual magic.</p>
 </div>
    </div>
     
 
-    <!-- Floating Code Elements -->
-    <div class="floating-code code-1">&lt;html&gt;</div>
-    <div class="floating-code code-2">designer;</div>
-    <div class="floating-code code-3">class="yashverma2628"&gt;</div>
-    <div class="floating-code code-4">function code-butiful();&gt;</div>
-    <div class="floating-code code-5"> return website ;&gt;</div>
-    <div class="floating-code code-6">code to impress&gt;</div>
-    <div class="floating-code code-7">html/css/javascript&gt;</div>
+    <!-- Floating Video Elements -->
+    <div class="floating-video video-1">Adobe Premiere</div>
+    <div class="floating-video video-2">After Effects</div>
+    <div class="floating-video video-3">Motion Graphics</div>
+    <div class="floating-video video-4">Color Grading</div>
+    <div class="floating-video video-5">Sound Design</div>
+    <div class="floating-video video-6">Final Cut Pro</div>
+    <div class="floating-video video-7">DaVinci Resolve</div>
 </section>
 
     <!-- About Section -->
@@ -1098,25 +1182,25 @@
         <h2>About Me</h2>
         <div class="about-content fade-in">
             <div class="about-text">
-                <p>I'm a passionate designer and developer with over 5 months of experience creating beautiful, functional digital experiences. My journey began with a love for visual design and evolved into a deep appreciation for clean, efficient code.</p>
-                <p>I believe in the power of combining aesthetic beauty with technical excellence. Whether I'm crafting user interfaces or writing code, I strive to create solutions that are not only visually appealing but also performant and user-friendly.</p>
-                <p>When I'm not designing or coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the design and development community.</p>
+                <p>I'm a passionate video editor and content creator with over 6 months of experience crafting compelling visual stories. My journey began with a love for storytelling and evolved into mastering the technical art of video production and post-production.</p>
+                <p>I specialize in creating engaging content for tech companies, startups, and digital platforms. Whether it's promotional videos, product demos, social media content, or educational tutorials, I bring stories to life through seamless editing and creative visual effects.</p>
+                <p>When I'm not editing, you can find me exploring new editing techniques, staying updated with the latest video trends, or collaborating with fellow creators to push the boundaries of digital storytelling.</p>
             </div>
             <div class="about-stats">
                 <div class="stat-item">
-                    <span class="stat-number">5+</span>
-                    <span class="stat-label">Projects Completed</span>
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Videos Edited</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">5+</span>
+                    <span class="stat-number">15+</span>
                     <span class="stat-label">Happy Clients</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">5+</span>
+                    <span class="stat-number">6+</span>
                     <span class="stat-label">months Experience</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">5+</span>
+                    <span class="stat-number">3</span>
                     <span class="stat-label">Awards Won</span>
                 </div>
             </div>
@@ -1127,55 +1211,151 @@
     <section class="section skills" id="skills">
         <h2>Skills & Expertise</h2>
         <div class="skills-container fade-in">
-            <div class="skill-category design-skills">
-                <h3><i class="fas fa-palette"></i> Design Skills</h3>
+            <div class="skill-category editing-skills">
+                <h3><i class="fas fa-video"></i> Video Editing Skills</h3>
                 <div class="skill-grid">
                     <div class="skill-item">
-                        <i class="fab fa-figma"></i>
-                        <div class="skill-name">Figma</div>
+                        <i class="fas fa-cut"></i>
+                        <div class="skill-name">Adobe Premiere</div>
                     </div>
                     <div class="skill-item">
-                        <i class="fab fa-adobe"></i>
-                        <div class="skill-name">Adobe XD</div>
+                        <i class="fas fa-magic"></i>
+                        <div class="skill-name">After Effects</div>
                     </div>
                     <div class="skill-item">
-                        <i class="fas fa-pencil-ruler"></i>
-                        <div class="skill-name">Sketch</div>
+                        <i class="fas fa-play-circle"></i>
+                        <div class="skill-name">Final Cut Pro</div>
                     </div>
                     <div class="skill-item">
-                        <i class="fas fa-mobile-alt"></i>
-                        <div class="skill-name">UI/UX</div>
+                        <i class="fas fa-palette"></i>
+                        <div class="skill-name">DaVinci Resolve</div>
                     </div>
-                    
-                   
                 </div>
             </div>
-            <div class="skill-category coding-skills">
-                <h3><i class="fas fa-code"></i> Coding Skills</h3>
+            <div class="skill-category content-skills">
+                <h3><i class="fas fa-bullhorn"></i> Content Skills</h3>
                 <div class="skill-grid">
                     <div class="skill-item">
-                        <i class="fab fa-html5"></i>
-                        <div class="skill-name">HTML5</div>
+                        <i class="fas fa-camera"></i>
+                        <div class="skill-name">Videography</div>
                     </div>
                     <div class="skill-item">
-                        <i class="fab fa-css3-alt"></i>
-                        <div class="skill-name">CSS3</div>
+                        <i class="fas fa-volume-up"></i>
+                        <div class="skill-name">Audio Editing</div>
                     </div>
                     <div class="skill-item">
-                        <i class="fab fa-js-square"></i>
-                        <div class="skill-name">JavaScript</div>
+                        <i class="fas fa-pen-fancy"></i>
+                        <div class="skill-name">Storytelling</div>
                     </div>
                     <div class="skill-item">
-                        <i class="fab fa-react"></i>
-                        <div class="skill-name">React</div>
+                        <i class="fas fa-chart-line"></i>
+                        <div class="skill-name">Analytics</div>
                     </div>
                     <div class="skill-item">
-                        <i class="fab fa-node-js"></i>
-                        <div class="skill-name">Node.js</div>
+                        <i class="fas fa-share-alt"></i>
+                        <div class="skill-name">Social Media</div>
                     </div>
                     <div class="skill-item">
-                        <i class="fab fa-git-alt"></i>
-                        <div class="skill-name">Git</div>
+                        <i class="fas fa-lightbulb"></i>
+                        <div class="skill-name">Creative Direction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section class="section video-showcase" id="videos">
+        <h2>Video Showcase</h2>
+        <div class="video-grid fade-in">
+            <!-- Video Item 1 - Replace with your Cloudinary video URL -->
+            <div class="video-item">
+                <div class="video-container">
+                    <video controls poster="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/thumbnail1.jpg">
+                        <source src="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/your-video1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Tech Product Launch</h3>
+                    <p class="video-desc">Dynamic product launch video with motion graphics, smooth transitions, and compelling storytelling for a tech startup.</p>
+                    <div class="video-tags">
+                        <span class="tag">Motion Graphics</span>
+                        <span class="tag">Product Demo</span>
+                        <span class="tag">Color Grading</span>
+                    </div>
+                    <div class="video-links">
+                        <a href="#" class="video-link"><i class="fab fa-youtube"></i> Watch Full</a>
+                        <a href="#" class="video-link"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Item 2 - Replace with your Cloudinary video URL -->
+            <div class="video-item">
+                <div class="video-container">
+                    <video controls poster="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/thumbnail2.jpg">
+                        <source src="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/your-video2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Social Media Campaign</h3>
+                    <p class="video-desc">Fast-paced social media content series with trendy editing, sound design, and platform-optimized formats.</p>
+                    <div class="video-tags">
+                        <span class="tag">Social Media</span>
+                        <span class="tag">Short Form</span>
+                        <span class="tag">Trendy Cuts</span>
+                    </div>
+                    <div class="video-links">
+                        <a href="#" class="video-link"><i class="fab fa-instagram"></i> View on IG</a>
+                        <a href="#" class="video-link"><i class="fas fa-share"></i> Share</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Item 3 - Replace with your Cloudinary video URL -->
+            <div class="video-item">
+                <div class="video-container">
+                    <video controls poster="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/thumbnail3.jpg">
+                        <source src="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/your-video3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Educational Tutorial</h3>
+                    <p class="video-desc">Comprehensive educational content with screen recordings, animations, and clear visual explanations for complex topics.</p>
+                    <div class="video-tags">
+                        <span class="tag">Educational</span>
+                        <span class="tag">Screen Recording</span>
+                        <span class="tag">Animation</span>
+                    </div>
+                    <div class="video-links">
+                        <a href="#" class="video-link"><i class="fab fa-youtube"></i> Full Tutorial</a>
+                        <a href="#" class="video-link"><i class="fas fa-bookmark"></i> Save</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Item 4 - Replace with your Cloudinary video URL -->
+            <div class="video-item">
+                <div class="video-container">
+                    <video controls poster="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/thumbnail4.jpg">
+                        <source src="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/your-video4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Brand Storytelling</h3>
+                    <p class="video-desc">Emotional brand story video with cinematic color grading, professional audio mixing, and compelling narrative structure.</p>
+                    <div class="video-tags">
+                        <span class="tag">Brand Video</span>
+                        <span class="tag">Cinematic</span>
+                        <span class="tag">Audio Mix</span>
+                    </div>
+                    <div class="video-links">
+                        <a href="#" class="video-link"><i class="fas fa-play"></i> Play Video</a>
+                        <a href="#" class="video-link"><i class="fas fa-heart"></i> Like</a>
                     </div>
                 </div>
             </div>
@@ -1187,103 +1367,104 @@
         <h2>Portfolio</h2>
         <div class="portfolio-tabs fade-in">
             <button class="tab-btn active" data-tab="all">All Projects</button>
-            <button class="tab-btn" data-tab="design">Design</button>
-            <button class="tab-btn" data-tab="development">Development</button>
+            <button class="tab-btn" data-tab="commercial">Commercial</button>
+            <button class="tab-btn" data-tab="social">Social Media</button>
+            <button class="tab-btn" data-tab="educational">Educational</button>
         </div>
         <div class="portfolio-grid fade-in">
-            <div class="portfolio-item" data-category="design">
-                <div class="portfolio-image">Dynamic school website</div>
+            <div class="portfolio-item" data-category="commercial">
+                <div class="portfolio-image">Startup Promo Video</div>
                 <div class="portfolio-content">
-                    <h3 class="portfolio-title">Dynamic school website</h3>
-                    <p class="portfolio-desc">Complete UI/UX design for a modern Dynamic school website with focus on user experience and website optimization.</p>
+                    <h3 class="portfolio-title">Tech Startup Promotional Video</h3>
+                    <p class="portfolio-desc">High-energy promotional video showcasing innovative tech solutions with dynamic motion graphics and compelling call-to-action.</p>
                     <div class="portfolio-tags">
-                        <span class="tag">UI Design</span>
-                        <span class="tag">Mobile</span>
-                        <span class="tag">java script</span>
+                        <span class="tag">Promotional</span>
+                        <span class="tag">Motion Graphics</span>
+                        <span class="tag">Tech</span>
                     </div>
                     <div class="portfolio-links">
-                        <a href="https://yashverma2628.github.io/school-project/" class="portfolio-link"><i class="fas fa-external-link-alt"></i> View Project</a>
-                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i> github</a>
+                        <a href="#" class="portfolio-link"><i class="fas fa-play"></i> Watch Video</a>
+                        <a href="#" class="portfolio-link"><i class="fas fa-download"></i> Download</a>
                     </div>
                 </div>
             </div>
-            <div class="portfolio-item" data-category="development">
-                <div class="portfolio-image"> astrologers website</div>
+            <div class="portfolio-item" data-category="social">
+                <div class="portfolio-image">Instagram Reels Series</div>
                 <div class="portfolio-content">
-                    <h3 class="portfolio-title">astrologers modern website</h3>
-                    <p class="portfolio-desc">A responsive astrologer's website with real-time contact , form submission, and modern UI components.</p>
+                    <h3 class="portfolio-title">Viral Social Media Campaign</h3>
+                    <p class="portfolio-desc">Series of trending Instagram Reels and TikTok videos that generated over 1M views with strategic editing and music sync.</p>
                     <div class="portfolio-tags">
-                        <span class="tag">html</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">CSS</span>
+                        <span class="tag">Instagram</span>
+                        <span class="tag">TikTok</span>
+                        <span class="tag">Viral Content</span>
                     </div>
                     <div class="portfolio-links">
-                        <a href="https://yashverma2628.github.io/cosmic-guru/" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="portfolio-link"><i class="fab fa-instagram"></i> View Series</a>
+                        <a href="#" class="portfolio-link"><i class="fas fa-chart-bar"></i> Analytics</a>
                     </div>
                 </div>
             </div>
-            <div class="portfolio-item" data-category="design">
-                <div class="portfolio-image">Brand Identity</div>
+            <div class="portfolio-item" data-category="educational">
+                <div class="portfolio-image">Coding Tutorial</div>
                 <div class="portfolio-content">
-                    <h3 class="portfolio-title">Brand Identity Design</h3>
-                    <p class="portfolio-desc">Complete brand identity package including logo design, color palette, typography, and brand guidelines for a tech startup.</p>
+                    <h3 class="portfolio-title">JavaScript Tutorial Series</h3>
+                    <p class="portfolio-desc">Comprehensive coding tutorial series with screen recordings, animations, and clear explanations for programming concepts.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Education</span>
+                        <span class="tag">Programming</span>
+                        <span class="tag">Tutorial</span>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="#" class="portfolio-link"><i class="fab fa-youtube"></i> YouTube</a>
+                        <a href="#" class="portfolio-link"><i class="fas fa-code"></i> Code Repo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="commercial">
+                <div class="portfolio-image">Product Demo</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">SaaS Product Demo</h3>
+                    <p class="portfolio-desc">Professional product demonstration video with screen captures, voiceover, and animated explanations for SaaS platform.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">SaaS</span>
+                        <span class="tag">Demo</span>
+                        <span class="tag">Voiceover</span>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="portfolio-link"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="social">
+                <div class="portfolio-image">Brand Content</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Brand Awareness Campaign</h3>
+                    <p class="portfolio-desc">Multi-platform brand awareness campaign with consistent visual identity across YouTube, Instagram, and LinkedIn.</p>
                     <div class="portfolio-tags">
                         <span class="tag">Branding</span>
-                        <span class="tag">Logo Design</span>
-                        <span class="tag">Adobe Illustrator</span>
+                        <span class="tag">Multi-platform</span>
+                        <span class="tag">Campaign</span>
                     </div>
                     <div class="portfolio-links">
-                        <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> View Project</a>
-                        <a href="#" class="portfolio-link"><i class="fab fa-dribbble"></i> Dribbble</a>
+                        <a href="#" class="portfolio-link"><i class="fas fa-eye"></i> View Campaign</a>
+                        <a href="#" class="portfolio-link"><i class="fas fa-chart-line"></i> Results</a>
                     </div>
                 </div>
             </div>
-            <div class="portfolio-item" data-category="development">
-                <div class="portfolio-image">Vue.js Website</div>
+            <div class="portfolio-item" data-category="educational">
+                <div class="portfolio-image">Workshop Recording</div>
                 <div class="portfolio-content">
-                    <h3 class="portfolio-title">Corporate Website</h3>
-                    <p class="portfolio-desc">Modern corporate website built with Vue.js, featuring smooth animations, responsive design, and SEO optimization.</p>
+                    <h3 class="portfolio-title">Live Workshop Edit</h3>
+                    <p class="portfolio-desc">Post-production editing of live coding workshop with multiple camera angles, slide integration, and audience Q&A segments.</p>
                     <div class="portfolio-tags">
-                        <span class="tag">Vue.js</span>
-                        <span class="tag">SASS</span>
-                        <span class="tag">Responsive</span>
+                        <span class="tag">Live Event</span>
+                        <span class="tag">Multi-cam</span>
+                        <span class="tag">Workshop</span>
                     </div>
                     <div class="portfolio-links">
-                        <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
-                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="design">
-                <div class="portfolio-image">Design System</div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">Design System</h3>
-                    <p class="portfolio-desc">Comprehensive design system with reusable components, style guides, and documentation for a fintech platform.</p>
-                    <div class="portfolio-tags">
-                        <span class="tag">Design System</span>
-                        <span class="tag">Components</span>
-                        <span class="tag">Documentation</span>
-                    </div>
-                    <div class="portfolio-links">
-                        <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> View System</a>
-                        <a href="#" class="portfolio-link"><i class="fab fa-figma"></i> Figma</a>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="development">
-                <div class="portfolio-image">Full-Stack App</div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">Task Management App</h3>
-                    <p class="portfolio-desc">Full-stack application with Node.js backend, React frontend, and MongoDB database for team task management.</p>
-                    <div class="portfolio-tags">
-                        <span class="tag">Full-Stack</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">MongoDB</span>
-                    </div>
-                    <div class="portfolio-links">
-                        <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live App</a>
-                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="portfolio-link"><i class="fas fa-play"></i> Watch Full</a>
+                        <a href="#" class="portfolio-link"><i class="fas fa-users"></i> Attendees</a>
                     </div>
                 </div>
             </div>
@@ -1296,45 +1477,45 @@
         <div class="services-grid fade-in">
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-mobile-alt"></i>
+                    <i class="fas fa-video"></i>
                 </div>
-                <h3 class="service-title">UI/UX Design</h3>
-                <p class="service-desc">Creating intuitive and beautiful user interfaces with focus on user experience, accessibility, and modern design principles.</p>
+                <h3 class="service-title">Video Editing</h3>
+                <p class="service-desc">Professional video editing with seamless cuts, color correction, audio synchronization, and creative transitions for all types of content.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-code"></i>
+                    <i class="fas fa-magic"></i>
                 </div>
-                <h3 class="service-title">Frontend Development</h3>
-                <p class="service-desc">Building responsive, performant web applications using modern frameworks like React, Vue.js, and cutting-edge technologies.</p>
+                <h3 class="service-title">Motion Graphics</h3>
+                <p class="service-desc">Eye-catching motion graphics, animated logos, lower thirds, and visual effects that enhance storytelling and brand identity.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-palette"></i>
                 </div>
-                <h3 class="service-title">Brand Identity</h3>
-                <p class="service-desc">Developing comprehensive brand identities including logos, color schemes, typography, and brand guidelines that tell your story.</p>
+                <h3 class="service-title">Color Grading</h3>
+                <p class="service-desc">Professional color correction and grading to establish mood, enhance visual appeal, and maintain consistent brand aesthetics.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-layer-group"></i>
+                    <i class="fas fa-volume-up"></i>
                 </div>
-                <h3 class="service-title">Design Systems</h3>
-                <p class="service-desc">Creating scalable design systems with reusable components, style guides, and documentation for consistent user experiences.</p>
+                <h3 class="service-title">Audio Post-Production</h3>
+                <p class="service-desc">Complete audio editing including noise reduction, mixing, sound design, and synchronization for crystal-clear audio quality.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-server"></i>
+                    <i class="fas fa-share-alt"></i>
                 </div>
-                <h3 class="service-title">Full-Stack Development</h3>
-                <p class="service-desc">End-to-end web application development from database design to frontend implementation with modern tech stack.</p>
+                <h3 class="service-title">Social Media Content</h3>
+                <p class="service-desc">Platform-optimized content creation for Instagram, TikTok, YouTube Shorts, and LinkedIn with trending editing styles and formats.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-graduation-cap"></i>
                 </div>
-                <h3 class="service-title">SEO Optimization</h3>
-                <p class="service-desc">Optimizing websites for search engines with technical SEO, performance improvements, and best practices implementation.</p>
+                <h3 class="service-title">Educational Videos</h3>
+                <p class="service-desc">Engaging educational content with screen recordings, animations, and clear visual explanations perfect for tutorials and courses.</p>
             </div>
         </div>
     </section>
@@ -1346,33 +1527,33 @@
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-date">2024 - Present</div>
-                    <h3 class="timeline-title">first year of collge</h3>
-                    <div class="timeline-company"> UI/UX Designer & Frontend Developer</div>
-                    <p class="timeline-desc">Now I’m in my first year of college, building on my foundation in HTML, CSS, and design. I’ve learned C++, data structures and algorithms, and JavaScript to make websites functional. Currently, I’m designing and developing websites, and also working as a freelance developer and designer to gain real-world experience.</p>
+                    <h3 class="timeline-title">First Year College & Freelance Editor</h3>
+                    <div class="timeline-company">Video Editor & Content Creator</div>
+                    <p class="timeline-desc">Currently in my first year of college while actively working as a freelance video editor. Specializing in tech content, startup promotions, and educational videos. Building a strong portfolio while gaining real-world experience with diverse clients and projects.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-date">2023 - 2024</div>
-                    <h3 class="timeline-title">completed my 12th </h3>
-                    <div class="timeline-company">intermidiate coder</div>
-                    <p class="timeline-desc">In class 12th, I had to focus more on my board studies, so I couldn’t continue coding regularly. However, I stayed connected to tech by learning design through Figma. Exploring UI/UX design helped me understand the creative side of development and kept my passion for technology alive during that year.</p>
+                    <h3 class="timeline-title">Completed 12th Grade</h3>
+                    <div class="timeline-company">Advanced Video Skills Development</div>
+                    <p class="timeline-desc">During my 12th grade, while focusing on board studies, I deepened my video editing skills. Learned advanced techniques in Adobe Premiere Pro, After Effects, and color grading. Started taking on small projects and building my editing portfolio.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-date">2022 - 2023</div>
-                    <h3 class="timeline-title">11th completed</h3>
-                    <div class="timeline-company">learning html and CSS</div>
-                    <p class="timeline-desc">Then I entered class 11th and began exploring new programming languages. I started learning HTML and CSS, which helped me understand how websites are built. Creating web pages gave me a sense of achievement and deepened my interest in coding, motivating me to continue learning and improving my skills every day.</p>
+                    <h3 class="timeline-title">11th Grade Completed</h3>
+                    <div class="timeline-company">Video Editing Foundation</div>
+                    <p class="timeline-desc">Discovered my passion for video editing during 11th grade. Started learning basic video editing concepts, storytelling principles, and exploring different editing software. Created my first videos and realized the power of visual storytelling.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-date">2021 - 2022</div>
-                    <h3 class="timeline-title">10th passed </h3>
-                    <div class="timeline-company">passionate about coding</div>
-                    <p class="timeline-desc">In class 10th, I discovered my passion for coding while exploring basic programming. I was fascinated by how simple lines of code could create something powerful. Since then, I’ve been eager to learn more, determined to grow in this field and build a successful future in technology and innovation.</p>
+                    <h3 class="timeline-title">10th Grade Passed</h3>
+                    <div class="timeline-company">Creative Awakening</div>
+                    <p class="timeline-desc">In class 10th, I discovered my love for visual content creation. Started experimenting with video editing as a hobby, fascinated by how raw footage could be transformed into compelling stories. This marked the beginning of my journey in video production.</p>
                 </div>
             </div>
         </div>
@@ -1383,8 +1564,8 @@
         <h2>Get In Touch</h2>
         <div class="contact-container fade-in">
             <div class="contact-info">
-                <h3>Let's work together!</h3>
-                <p>I'm always interested in new opportunities and exciting projects. Whether you need design, development, or both, let's discuss how we can bring your ideas to life.</p>
+                <h3>Let's create something amazing together!</h3>
+                <p>I'm passionate about bringing stories to life through video editing. Whether you need promotional content, social media videos, or educational tutorials, let's discuss how we can make your vision a reality.</p>
                 
                 <div class="contact-item">
                     <div class="contact-icon">
@@ -1412,7 +1593,7 @@
                     </div>
                     <div>
                         <strong>Location</strong><br>
-                        jabalpur, madhya pradesh
+                        Jabalpur, Madhya Pradesh
                     </div>
                 </div>
                 
@@ -1422,7 +1603,7 @@
                     </div>
                     <div>
                         <strong>Availability</strong><br>
-                        Available for freelance projects
+                        Available for video editing projects
                     </div>
                 </div>
             </div>
@@ -1454,13 +1635,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-social">
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Vimeo"><i class="fab fa-vimeo-v"></i></a>
             <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
         </div>
-        <p>&copy; 2025 Yash Verma. All rights reserved. Made with ❤️ and lots of ☕</p>
+        <p>&copy; 2025 Yash Verma. All rights reserved. Crafted with ❤️ and endless creativity 🎬</p>
     </footer>
 
     <!-- JavaScript -->
@@ -1612,7 +1793,7 @@
                 if (entry.isIntersecting) {
                     const target = parseInt(entry.target.textContent);
                     let count = 0;
-                    const increment = target / 5;
+                    const increment = target / 50;
                     
                     const timer = setInterval(() => {
                         count += increment;
@@ -1637,81 +1818,91 @@
             statsObserver.observe(num);
         });
 
+        // Typing effect for editor heading
+        class TypeWriter {
+            constructor(element, words, wait = 3000) {
+                this.element = element;
+                this.words = words;
+                this.txt = '';
+                this.wordIndex = 0;
+                this.wait = parseInt(wait, 10);
+                this.type();
+                this.isDeleting = false;
+            }
 
+            type() {
+                // Current index of word
+                const current = this.wordIndex % this.words.length;
+                // Get full text of current word
+                const fullTxt = this.words[current];
 
+                // Check if deleting
+                if (this.isDeleting) {
+                    // Remove character
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    // Add character
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
 
+                // Insert txt into element
+                this.element.innerHTML = `<span>${this.txt}</span>`;
 
-        // Add this JavaScript code to your existing script section
+                // Initial type speed
+                let typeSpeed = 100;
 
-// Typing effect for coder heading
-class TypeWriter {
-    constructor(element, words, wait = 3000) {
-        this.element = element;
-        this.words = words;
-        this.txt = '';
-        this.wordIndex = 0;
-        this.wait = parseInt(wait, 10);
-        this.type();
-        this.isDeleting = false;
-    }
+                if (this.isDeleting) {
+                    // Faster when deleting
+                    typeSpeed /= 2;
+                }
 
-    type() {
-        // Current index of word
-        const current = this.wordIndex % this.words.length;
-        // Get full text of current word
-        const fullTxt = this.words[current];
+                // If word is complete
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    // Make pause at end
+                    typeSpeed = this.wait;
+                    // Set delete to true
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    // Move to next word
+                    this.wordIndex++;
+                    // Pause before start typing
+                    typeSpeed = 500;
+                }
 
-        // Check if deleting
-        if (this.isDeleting) {
-            // Remove character
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-            // Add character
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
+                setTimeout(() => this.type(), typeSpeed);
+            }
         }
 
-        // Insert txt into element
-        this.element.innerHTML = `<span>${this.txt}</span>`;
+        // Initialize typing effect when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const typingElement = document.getElementById('typing-text');
+            
+            if (typingElement) {
+                // Words to type - customized for video editing
+                const words = ['Editor', 'Creator', 'Storyteller', 'Visual Artist'];
+                
+                // Initialize typewriter effect
+                new TypeWriter(typingElement, words, 2000);
+            }
+        });
 
-        // Initial type speed
-        let typeSpeed = 100;
-
-        if (this.isDeleting) {
-            // Faster when deleting
-            typeSpeed /= 2;
-        }
-
-        // If word is complete
-        if (!this.isDeleting && this.txt === fullTxt) {
-            // Make pause at end
-            typeSpeed = this.wait;
-            // Set delete to true
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-            this.isDeleting = false;
-            // Move to next word
-            this.wordIndex++;
-            // Pause before start typing
-            typeSpeed = 500;
-        }
-
-        setTimeout(() => this.type(), typeSpeed);
-    }
-}
-
-// Initialize typing effect when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    const typingElement = document.getElementById('typing-text');
-    
-    if (typingElement) {
-        // Words to type - you can customize these
-        const words = ['Coder', 'Developer', 'Programmer', 'Engineer'];
-        
-        // Initialize typewriter effect
-        new TypeWriter(typingElement, words, 2000);
-    }
-});
+        // Video controls enhancement
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('loadedmetadata', function() {
+                // Add custom video controls if needed
+                this.setAttribute('preload', 'metadata');
+            });
+            
+            // Pause other videos when one starts playing
+            video.addEventListener('play', function() {
+                document.querySelectorAll('video').forEach(otherVideo => {
+                    if (otherVideo !== this) {
+                        otherVideo.pause();
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
-
