@@ -481,7 +481,7 @@
 
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
         }
@@ -501,15 +501,52 @@
         .video-container {
             position: relative;
             width: 100%;
-            height: 250px;
             background: #000;
             overflow: hidden;
+            border-radius: 15px 15px 0 0;
+        }
+
+        /* Adaptive aspect ratio for different video orientations */
+        .video-container.horizontal {
+            aspect-ratio: 16/9;
+        }
+
+        .video-container.vertical {
+            aspect-ratio: 9/16;
+            max-height: 400px;
+        }
+
+        .video-container.square {
+            aspect-ratio: 1/1;
         }
 
         .video-container video {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
+        }
+
+        /* Ensure videos fill the container properly */
+        .video-container video::-webkit-media-controls-panel {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 49%, rgba(255,255,255,0.1) 50%, transparent 51%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-container:hover::before {
+            opacity: 1;
         }
 
         .video-content {
@@ -966,6 +1003,35 @@
 
             .video-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .video-container.horizontal {
+                aspect-ratio: 16/9;
+            }
+            
+            .video-container.vertical {
+                aspect-ratio: 9/16;
+                max-height: 350px;
+            }
+            
+            .video-container.square {
+                aspect-ratio: 1/1;
+                max-height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-container.vertical {
+                max-height: 300px;
+            }
+            
+            .video-container.square {
+                max-height: 250px;
+            }
+            
+            .video-container.horizontal {
+                aspect-ratio: 16/9;
             }
         }
 
@@ -1146,7 +1212,7 @@
     <div class="hero-container">
         <!-- Left Section - Content Creator -->
         <div class="creator-section">
-            <h1 class="passion-one-regular">Content Creator</h1>
+            <h1 class="passion-one-regular">Yash Verma</h1>
             <p class="creator-desc">Storyteller specializing in visual narratives and engaging content creation.</p>
         </div>
 
@@ -1268,17 +1334,17 @@
     <section class="section video-showcase" id="videos">
         <h2>Video Showcase</h2>
         <div class="video-grid fade-in">
-            <!-- Video Item 1 - Replace with your Cloudinary video URL -->
+            <!-- Video Item 1 - Horizontal Video -->
             <div class="video-item">
-                <div class="video-container">
-                    <video controls poster="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/thumbnail1.jpg">
-                        <source src="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/your-video1.mp4" type="video/mp4">
+                <div class="video-container vertical">
+                    <video controls preload="metadata" poster="https://res.cloudinary.com/your-cloud/image/upload/v1234567890/thumbnail1.jpg">
+                        <source src="https://res.cloudinary.com/dprxaeuwi/video/upload/v1758435968/tfxaohxzqxqv8hy9lquq.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <div class="video-content">
-                    <h3 class="video-title">Tech Product Launch</h3>
-                    <p class="video-desc">Dynamic product launch video with motion graphics, smooth transitions, and compelling storytelling for a tech startup.</p>
+                    <h3 class="video-title">Dynamic Visual Storytelling | Short Cinematic Edit</h3>
+                    <p class="video-desc">A fast-paced 20-second cinematic edit showcasing seamless transitions, rhythmic cuts, and balanced color tones.</p>
                     <div class="video-tags">
                         <span class="tag">Motion Graphics</span>
                         <span class="tag">Product Demo</span>
@@ -1291,17 +1357,17 @@
                 </div>
             </div>
 
-            <!-- Video Item 2 - Replace with your Cloudinary video URL -->
+            <!-- Video Item 2 - Vertical Video -->
             <div class="video-item">
-                <div class="video-container">
-                    <video controls poster="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/thumbnail2.jpg">
-                        <source src="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/your-video2.mp4" type="video/mp4">
+                <div class="video-container vertical">
+                    <video controls preload="metadata" poster="https://res.cloudinary.com/your-cloud/image/upload/v1234567890/thumbnail2.jpg">
+                        <source src="https://res.cloudinary.com/dprxaeuwi/video/upload/v1758436444/womjofqftkqnuo2wvgmh.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <div class="video-content">
-                    <h3 class="video-title">Social Media Campaign</h3>
-                    <p class="video-desc">Fast-paced social media content series with trendy editing, sound design, and platform-optimized formats.</p>
+                    <h3 class="video-title">Aesthetic Storytelling Reel | Creative Social Edit</h3>
+                    <p class="video-desc">A visually engaging reel crafted with smooth transitions, vibrant tones, and a narrative flow that brings out personality and mood.</p>
                     <div class="video-tags">
                         <span class="tag">Social Media</span>
                         <span class="tag">Short Form</span>
@@ -1314,48 +1380,94 @@
                 </div>
             </div>
 
-            <!-- Video Item 3 - Replace with your Cloudinary video URL -->
+            <!-- Video Item 3 - Square Video -->
             <div class="video-item">
-                <div class="video-container">
-                    <video controls poster="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/thumbnail3.jpg">
-                        <source src="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/your-video3.mp4" type="video/mp4">
+                <div class="video-container vertical">
+                    <video controls preload="metadata" poster="https://res.cloudinary.com/your-cloud/image/upload/v1234567890/thumbnail3.jpg">
+                        <source src="https://res.cloudinary.com/dprxaeuwi/video/upload/v1758436676/ezuvuxmbbfiztyn9jlep.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <div class="video-content">
-                    <h3 class="video-title">Educational Tutorial</h3>
-                    <p class="video-desc">Comprehensive educational content with screen recordings, animations, and clear visual explanations for complex topics.</p>
+                    <h3 class="video-title">Trendy Lyrics Edit | Gen Z Instagram Story</h3>
+                    <p class="video-desc">A fast-paced Instagram Story edit featuring bold typography, animated lyrics, and vibrant Gen Z-inspired visuals..</p>
                     <div class="video-tags">
-                        <span class="tag">Educational</span>
-                        <span class="tag">Screen Recording</span>
+                        <span class="tag">Instagram</span>
+                        <span class="tag">Story</span>
                         <span class="tag">Animation</span>
                     </div>
                     <div class="video-links">
-                        <a href="#" class="video-link"><i class="fab fa-youtube"></i> Full Tutorial</a>
+                        <a href="#" class="video-link"><i class="fab fa-youtube"></i> Full video</a>
                         <a href="#" class="video-link"><i class="fas fa-bookmark"></i> Save</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Video Item 4 - Replace with your Cloudinary video URL -->
+            <!-- Video Item 4 - Horizontal Video -->
             <div class="video-item">
-                <div class="video-container">
-                    <video controls poster="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/thumbnail4.jpg">
-                        <source src="https://res.cloudinary.com/your-cloud/video/upload/v1234567890/your-video4.mp4" type="video/mp4">
+                <div class="video-container horizontal">
+                    <video controls preload="metadata" poster="https://res.cloudinary.com/your-cloud/image/upload/v1234567890/thumbnail4.jpg">
+                        <source src="https://res.cloudinary.com/dprxaeuwi/video/upload/v1758436806/nkosy3vneaoto8txsutx.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <div class="video-content">
-                    <h3 class="video-title">Brand Storytelling</h3>
-                    <p class="video-desc">Emotional brand story video with cinematic color grading, professional audio mixing, and compelling narrative structure.</p>
+                  <h3 class="video-title">Trendy Lyrics Edit | Gen Z Instagram Story</h3>
+                    <p class="video-desc">A fast-paced Instagram Story edit featuring bold typography, animated lyrics, and vibrant Gen Z-inspired visuals..</p>
                     <div class="video-tags">
-                        <span class="tag">Brand Video</span>
-                        <span class="tag">Cinematic</span>
-                        <span class="tag">Audio Mix</span>
+                        <span class="tag">Instagram</span>
+                        <span class="tag">Story</span>
+                        <span class="tag">Animation</span>
                     </div>
                     <div class="video-links">
                         <a href="#" class="video-link"><i class="fas fa-play"></i> Play Video</a>
                         <a href="#" class="video-link"><i class="fas fa-heart"></i> Like</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Item 5 - Vertical Video -->
+            <div class="video-item">
+                <div class="video-container vertical">
+                    <video controls preload="metadata" poster="https://res.cloudinary.com/your-cloud/image/upload/v1234567890/thumbnail5.jpg">
+                        <source src="https://res.cloudinary.com/dprxaeuwi/video/upload/v1758436854/thera1lhsq6gybzj6z9t.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">High-Intensity Gym Edit | Power Visuals & Effects</h3>
+                    <p class="video-desc">An energetic gym edit packed with cinematic visuals, heavy bass sync, and dynamic motion effects.</p>
+                    <div class="video-tags">
+                        <span class="tag">gym edits</span>
+                        <span class="tag">Viral videos</span>
+                        <span class="tag">Music Sync</span>
+                    </div>
+                    <div class="video-links">
+                        <a href="#" class="video-link"><i class="fab fa-tiktok"></i> View on Instagram</a>
+                        <a href="#" class="video-link"><i class="fas fa-fire"></i> Trending</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Item 6 - Horizontal Video -->
+            <div class="video-item">
+                <div class="video-container vertical">
+                    <video controls preload="metadata" poster="https://res.cloudinary.com/your-cloud/image/upload/v1234567890/thumbnail6.jpg">
+                        <source src="https://res.cloudinary.com/dprxaeuwi/video/upload/v1758436908/jggm1vr1zufjujgiscu6.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Cinematic Model Edit | Viral Lyrics & Transitions</h3>
+                    <p class="video-desc">A cinematic edit featuring models with smooth storytelling transitions, synchronized lyrics, and trending viral-style effects.</p>
+                    <div class="video-tags">
+                        <span class="tag">viral short videos</span>
+                        <span class="tag">animation</span>
+                        <span class="tag">storytelling</span>
+                    </div>
+                    <div class="video-links">
+                        <a href="#" class="video-link"><i class="fas fa-chart-line"></i> View </a>
+                        <a href="#" class="video-link"><i class="fas fa-download"></i> Download</a>
                     </div>
                 </div>
             </div>
@@ -1887,11 +1999,30 @@
             }
         });
 
-        // Video controls enhancement
+        // Video controls enhancement and auto orientation detection
         document.querySelectorAll('video').forEach(video => {
             video.addEventListener('loadedmetadata', function() {
                 // Add custom video controls if needed
                 this.setAttribute('preload', 'metadata');
+                
+                // Auto-detect video orientation and adjust container
+                const container = this.closest('.video-container');
+                const aspectRatio = this.videoWidth / this.videoHeight;
+                
+                // Remove existing orientation classes
+                container.classList.remove('horizontal', 'vertical', 'square');
+                
+                // Add appropriate class based on aspect ratio
+                if (aspectRatio > 1.3) {
+                    // Horizontal/Landscape video
+                    container.classList.add('horizontal');
+                } else if (aspectRatio < 0.8) {
+                    // Vertical/Portrait video
+                    container.classList.add('vertical');
+                } else {
+                    // Square or near-square video
+                    container.classList.add('square');
+                }
             });
             
             // Pause other videos when one starts playing
@@ -1901,6 +2032,17 @@
                         otherVideo.pause();
                     }
                 });
+            });
+            
+            // Add loading state
+            video.addEventListener('loadstart', function() {
+                const container = this.closest('.video-container');
+                container.style.opacity = '0.7';
+            });
+            
+            video.addEventListener('canplay', function() {
+                const container = this.closest('.video-container');
+                container.style.opacity = '1';
             });
         });
     </script>
